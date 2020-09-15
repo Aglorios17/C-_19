@@ -7,6 +7,8 @@
 class Personnage
 {
 	public:
+	Personnage();
+	Personnage(std::string nomArme, int degatsArme);
 	//methodes
 	void	recevoirDegats(int	nbDegats);
 	void	attaquer(Personnage &cible);

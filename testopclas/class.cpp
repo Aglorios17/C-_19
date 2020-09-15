@@ -1,6 +1,12 @@
-#include "Personnage.h"
+#include "class.h"
 
-using namespace std;
+Personnage::Personnage()
+{
+    m_vie = 100;
+    m_mana = 100;
+    m_nomArme = "Épée rouillée";
+    m_degatsArme = 10;
+}
 
 void Personnage::recevoirDegats(int nbDegats)
 {
@@ -29,7 +35,7 @@ void Personnage::boirePotionDeVie(int quantitePotion)
     }
 }
 
-void Personnage::changerArme(string nomNouvelleArme, int degatsNouvelleArme)
+void Personnage::changerArme(std::string nomNouvelleArme, int degatsNouvelleArme)
 {
     m_nomArme = nomNouvelleArme;
     m_degatsArme = degatsNouvelleArme;
