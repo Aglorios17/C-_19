@@ -22,6 +22,7 @@ class Contact
 
 	public:
 		void	add(int mem);
+		void	show(int i);
 };
 
 #endif

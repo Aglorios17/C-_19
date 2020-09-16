@@ -1,5 +1,14 @@
 #include "contact.hpp"
 
+void	Contact::show(int i)
+{
+	std::cout << std::setw(10) << i << "|" ;
+	std::cout << std::setw(10) << FirstName << " |" ;
+	std::cout << std::setw(10) << LastName << " |" ;
+	std::cout <<  std::setw(10) << Login << " |" ;
+	std::cout << "\n";
+}
+
 void	Contact::add(int mem)
 {
 	std::cout << "Adding a contact:" << std::endl;
@@ -31,6 +40,7 @@ int main()
 {
 	bool	bcl;
 	int		mem;
+	int		i;
 	std::string cmd;
 	Contact contact[8];
 
@@ -57,6 +67,16 @@ int main()
 				contact[mem].add(mem);
 				mem++;
 				system("clear");
+			}
+		}
+		else if (cmd == "SEARCH")
+		{
+			i = 0;
+			system("clear");
+			while (i < mem)
+			{
+				contact[i].show(i + 1);
+				i++;
 			}
 		}
 		else
