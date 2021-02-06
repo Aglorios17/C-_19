@@ -15,10 +15,6 @@ all: $(NAME)
 $(OBJS): $(SRC)
 	$(GCC) $(CFLAGS) -c $(SRC)
 
-$(NAME): $(OBJS)
-	ar rc $(NAME) $(OBJS)
-	ranlib $(NAME)
-
 clean:
 	$(RM) $(OBJS) $(BOBJS)
 
