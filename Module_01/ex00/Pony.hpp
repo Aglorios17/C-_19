@@ -1,5 +1,5 @@
-#ifndef	PONY_H
-# define PONY_H
+#ifndef	PONY_HPP
+# define PONY_HPP
 
 # include <iostream>
 # include <iomanip>
@@ -8,14 +8,15 @@
 class Pony
 {
 	private:
-		std::string Name;
-		std::string Color;
-		std::string Height;
+		std::string P_Name;
+		std::string P_Color;
 	public:
-		Pony(std::string Name, std::color Color, std::string Height);
+		Pony(std::string Name, std::string Color);
 		~Pony();
-		void	show();
-}
+		void	show(void);
+};
 
 void	ponyOnTheStack();
 void	pomyOnTheHeap();
+
+#endif
