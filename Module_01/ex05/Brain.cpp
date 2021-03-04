@@ -1,18 +1,13 @@
-#ifndef BRAIN_HPP
-# define BRAIN_HPP
+#include "Brain.hpp"
 
-# include <iomanip>
-# include <iostream>
-# include <string>
-# include <sstream>
-
-class Brain
+Brain::Brain(void)
 {
-    private:
-        std::string    address;
+	std::stringstream ss;
+	ss << this;
+	address = ss.str();
+}
 
-    public:
-        void *identify(void);
-};
-
-#endif
+std::string Brain::identify(void)
+{
+    return (address);
+}

@@ -1,16 +1,17 @@
 #ifndef HUMAN_HPP
 # define HUMAN_HPP
 
-# include <string>
-# include <iostream>
-# include <sstream>
-# include <iomanip>
+#include "Brain.hpp"
 
 class Human
 {
     private:
+        Brain brain;
 
     public:
+        Human(void);
+        Brain getBrain(void);
+        std::string identify(void);
 };
 
 #endif

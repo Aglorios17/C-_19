@@ -8,8 +8,8 @@
 class Pony
 {
 	private:
-		std::string P_Name;
-		std::string P_Color;
+		std::string name;
+		std::string color;
 	public:
 		Pony(std::string Name, std::string Color);
 		~Pony();
