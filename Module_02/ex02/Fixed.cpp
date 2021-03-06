@@ -106,25 +106,25 @@ Fixed Fixed::operator!=(Fixed const & rhs) const
 Fixed Fixed::operator+(Fixed const & rhs) const
 {
 	std::cout << "Assignation + operator called" << std::endl;
-	return Fixed((this->value + rhs.getRawBits()) >> this->bits);
+	return Fixed(this->toFloat() + rhs.toFloat());
 }
 
 Fixed Fixed::operator-(Fixed const & rhs) const
 {
 	std::cout << "Assignation - operator called" << std::endl;
-	return Fixed((this->value - rhs.getRawBits()) >> this->bits);
+	return Fixed(this->toFloat() - rhs.toFloat());
 }
 
-Fixed Fixed::operator*(Fixed const & rhs) const //////////// probs
+Fixed Fixed::operator*(Fixed const & rhs) const
 {
 	std::cout << "Assignation * operator called" << std::endl;
-	return Fixed((this->value * rhs.getRawBits()));
+	return Fixed((this->toFloat() * rhs.toFloat()));
 }
 
 Fixed Fixed::operator/(Fixed const & rhs) const
 {
 	std::cout << "Assignation / operator called" << std::endl;
-	return Fixed((this->value / rhs.getRawBits()));
+	return Fixed((this->toFloat() / rhs.toFloat()));
 }
 
 int	Fixed::getRawBits(void) const
@@ -146,6 +146,68 @@ float	Fixed::toFloat(void) const
 int		Fixed::toInt(void) const
 {
 	return (this->value >> this->bits);
+}
+
+Fixed & Fixed::operator++(void)
+{
+	std::cout << "Assignation ++ operator called" << std::endl;
+	this->value += 1;
+
+	return (*this);
+}
+
+Fixed Fixed::operator++(int)
+{
+	Fixed ret(*this);
+	++*this;
+	return (ret);
+}
+
+Fixed & Fixed::operator--(void)
+{
+	std::cout << "Assignation -- operator called" << std::endl;
+	this->value -= 1;
+
+	return (*this);
+}
+
+Fixed Fixed::operator--(int)
+{
+	Fixed ret(*this);
+	--*this;
+	return (ret);
+}
+
+Fixed & Fixed::max(Fixed & rhs, Fixed & nbr)
+{
+	if (rhs.getRawBits() > nbr.getRawBits())
+		return (rhs);
+	else
+		return (nbr);
+}
+
+const Fixed & Fixed::max(Fixed const & rhs, Fixed const & nbr)
+{
+	if (rhs.getRawBits() > nbr.getRawBits())
+		return (rhs);
+	else
+		return (nbr);
+}
+
+Fixed & Fixed::min(Fixed & rhs, Fixed & nbr)
+{
+	if (rhs.getRawBits() < nbr.getRawBits())
+		return (rhs);
+	else
+		return (nbr);
+}
+
+const Fixed & Fixed::min(Fixed const & rhs, Fixed const & nbr)
+{
+	if (rhs.getRawBits() < nbr.getRawBits())
+		return (rhs);
+	else
+		return (nbr);
 }
 
 std::ostream & operator<<(std::ostream & o, Fixed const & rhs)

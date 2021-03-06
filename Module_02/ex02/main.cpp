@@ -15,38 +15,52 @@
 
 int main(void)
 {
-	Fixed	a(5);
+	Fixed	a;
+	Fixed	f;
 	Fixed	d(20);
 	Fixed	c;
-//	Fixed const b(Fixed(5.05f) * Fixed(2));
+	Fixed	e(5);
+	Fixed const b(Fixed(5.05f) * Fixed(2));
 
-	c  = a < d;
+	std::cout << "/////////// TESTER ALL /////" << std::endl;
+	c  = e < d;
 	std::cout << "< "<< c << std::endl;
-	c  = a > d;
+	c  = e > d;
 	std::cout << "> "<< c << std::endl;
-	c  = a <= d;
+	c  = e <= d;
 	std::cout << "<= "<< c << std::endl;
-	c  = a >= d;
+	c  = e >= d;
 	std::cout << ">= "<< c << std::endl;
-	c  = a != d;
+	c  = e != d;
 	std::cout << "!= "<< c << std::endl;
-	c  = a == d;
+	c  = e == d;
 	std::cout << "== "<< c << std::endl;
-	c  = a + d;
+	c  = e + d;
 	std::cout << "+ "<< c << std::endl;
-	c  = d - a;
+	c  = d - e;
 	std::cout << "- "<< c << std::endl;
-	c  = d / a;
+	c  = d / Fixed(0);
 	std::cout << "/ "<< c << std::endl;
-	Fixed const z(Fixed(5.05f) * Fixed(2));
-	std::cout << "* "<< z << std::endl;
-//	std::cout << ++a << std::endl;
-//	std::cout << a << std::endl;
-//	std::cout << a++ << std::endl;
-//	std::cout << a << std::endl;
+	std::cout << f << std::endl;
+	std::cout << ++f << std::endl;
+	std::cout << f << std::endl;
+	std::cout << f++ << std::endl;
+	std::cout << f << std::endl;
+	std::cout << --f << std::endl;
+	std::cout << f << std::endl;
+	std::cout << f-- << std::endl;
+	std::cout << f << std::endl;
+	std::cout << ++f << std::endl;
+	std::cout << Fixed::min(Fixed(2), b) << std::endl;
+	std::cout << "/////////// MAIN TESTER /////" << std::endl;
+	std::cout << a << std::endl;
+	std::cout << ++a << std::endl;
+	std::cout << a << std::endl;
+	std::cout << a++ << std::endl;
+	std::cout << a << std::endl;
 
-//	std::cout << b << std::endl;
+	std::cout << b << std::endl;
 
-//	std::cout << Fixed::max(a, b) << std::endl;
+	std::cout << Fixed::max(a, b) << std::endl;
 	return 0;
 }
