@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   FragTrap.cpp                                       :+:      :+:    :+:   */
+/*   NinjaTrap.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aglorios <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -10,12 +10,12 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "FragTrap.hpp"
+#include "NinjaTrap.hpp"
 #include "ClapTrap.hpp"
 
-FragTrap::FragTrap(void){}
+NinjaTrap::NinjaTrap(void){}
 
-FragTrap::FragTrap(std::string name) : ClapTrap(100, 100, 100, 100, 1, name, 30, 20, 5)
+NinjaTrap::NinjaTrap(std::string name) : ClapTrap(60, 60, 120, 120, 1, name, 60, 5, 0)
 {
 /*	this->Name = name;
 	this->Hit_points = 100;
@@ -27,10 +27,10 @@ FragTrap::FragTrap(std::string name) : ClapTrap(100, 100, 100, 100, 1, name, 30,
 	this->Ranged_attack_damage = 20;
 	this->Armor_damage_reduction = 5;
 */
-	std::cout << this->Name << " appeared" << std::endl;
+	std::cout << "Ninja " << this->Name << " appeared" << std::endl;
 }
 
-FragTrap::~FragTrap(void)
+NinjaTrap::~NinjaTrap(void)
 {
 	if (this->Hit_points > 0)
 		std::cout << this->Name << " left" << std::endl;
@@ -38,9 +38,9 @@ FragTrap::~FragTrap(void)
 		std::cout << this->Name << " is dead" << std::endl;
 }
 
-FragTrap::FragTrap(const FragTrap &copy) : ClapTrap(copy)
+NinjaTrap::NinjaTrap(const NinjaTrap &copy) : ClapTrap(copy)
 {
-	std::cout << "Copy FragTrap is called" << std::endl;
+	std::cout << "Copy NinjaTrap is called" << std::endl;
 }
 /*
 FragTrap::FragTrap(const FragTrap &copy)
@@ -56,17 +56,17 @@ FragTrap::FragTrap(const FragTrap &copy)
 	Armor_damage_reduction = copy.Armor_damage_reduction;
 }
 */
-void	FragTrap::rangedAttack(std::string const & target)
+void	NinjaTrap::rangedAttack(std::string const & target)
 {
-	std::cout << "FR4G-TP " << this->Name << " attaque " << target << " a distance, causant " << this->Ranged_attack_damage << " points de degats !" << std::endl; 
+	std::cout << "NINJ4-TP " << this->Name << " attaque " << target << " a distance, causant " << this->Ranged_attack_damage << " points de degats !" << std::endl; 
 }
 
-void	FragTrap::meleeAttack(std::string const & target)
+void	NinjaTrap::meleeAttack(std::string const & target)
 {
-	std::cout << "FR4G-TP " << this->Name << " attaque " << target << " par melee, causant " << this->Melee_attack_damage << " points de degats !" <<std::endl;
+	std::cout << "NINJ4-TP " << this->Name << " attaque " << target << " par melee, causant " << this->Melee_attack_damage << " points de degats !" <<std::endl;
 }
 
-int	FragTrap::vaulthunter_dot_exe(std::string const & target)
+int	NinjaTrap::ninjaShoebox(std::string const & target)
 {
 	if (this->Energy_points > 24)
 	{

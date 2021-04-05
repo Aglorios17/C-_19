@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   FragTrap.cpp                                       :+:      :+:    :+:   */
+/*   SuperTrap.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aglorios <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -10,12 +10,12 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "FragTrap.hpp"
+#include "SuperTrap.hpp"
 #include "ClapTrap.hpp"
 
-FragTrap::FragTrap(void){}
+SuperTrap::SuperTrap(void){}
 
-FragTrap::FragTrap(std::string name) : ClapTrap(100, 100, 100, 100, 1, name, 30, 20, 5)
+SuperTrap::SuperTrap(std::string name) : ClapTrap(100, 100, 100, 100, 1, name, 30, 20, 5)
 {
 /*	this->Name = name;
 	this->Hit_points = 100;
@@ -30,7 +30,7 @@ FragTrap::FragTrap(std::string name) : ClapTrap(100, 100, 100, 100, 1, name, 30,
 	std::cout << this->Name << " appeared" << std::endl;
 }
 
-FragTrap::~FragTrap(void)
+SuperTrap::~SuperTrap(void)
 {
 	if (this->Hit_points > 0)
 		std::cout << this->Name << " left" << std::endl;
@@ -38,9 +38,9 @@ FragTrap::~FragTrap(void)
 		std::cout << this->Name << " is dead" << std::endl;
 }
 
-FragTrap::FragTrap(const FragTrap &copy) : ClapTrap(copy)
+SuperTrap::SuperTrap(const SuperTrap &copy) : ClapTrap(copy)
 {
-	std::cout << "Copy FragTrap is called" << std::endl;
+	std::cout << "Copy SuperTrap is called" << std::endl;
 }
 /*
 FragTrap::FragTrap(const FragTrap &copy)
@@ -56,28 +56,12 @@ FragTrap::FragTrap(const FragTrap &copy)
 	Armor_damage_reduction = copy.Armor_damage_reduction;
 }
 */
-void	FragTrap::rangedAttack(std::string const & target)
+void	SuperTrap::rangedAttack(std::string const & target)
 {
-	std::cout << "FR4G-TP " << this->Name << " attaque " << target << " a distance, causant " << this->Ranged_attack_damage << " points de degats !" << std::endl; 
+	std::cout << "SUP3R-TP " << this->Name << " attaque " << target << " a distance, causant " << this->Ranged_attack_damage << " points de degats !" << std::endl; 
 }
 
-void	FragTrap::meleeAttack(std::string const & target)
+void	SuperTrap::meleeAttack(std::string const & target)
 {
-	std::cout << "FR4G-TP " << this->Name << " attaque " << target << " par melee, causant " << this->Melee_attack_damage << " points de degats !" <<std::endl;
-}
-
-int	FragTrap::vaulthunter_dot_exe(std::string const & target)
-{
-	if (this->Energy_points > 24)
-	{
-		std::string attack[] = {"Par mal de sa mere", "Coup de coude dans le ventre", "Maudit les 5 prochaines generations", "Triple brulure indienne", "Petite baleyette"};
-		srand(time(0));
-		int i = rand() % 5;
-		this->Energy_points -= 25;	
-		std::cout << this->Name << " attaque " << target <<  " avec '" << attack[i] << "' et inflige " << attack[i].size() << " points de degats ! Il perd 25 d'energie actuellement : " << this->Energy_points << std::endl;
-		return (attack[i].size());
-	}
-	else
-		std::cout << this->Name << " a besoin de 25 points d'energie, actuellement : " << this->Energy_points << " points !" << std::endl;
-	return (0);
+	std::cout << "SUP3R-TP " << this->Name << " attaque " << target << " par melee, causant " << this->Melee_attack_damage << " points de degats !" <<std::endl;
 }

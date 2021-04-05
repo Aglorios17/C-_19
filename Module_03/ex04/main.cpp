@@ -12,6 +12,8 @@
 
 #include "FragTrap.hpp"
 #include "ScavTrap.hpp"
+#include "NinjaTrap.hpp"
+#include "SuperTrap.hpp"
 
 int main()
 {
@@ -19,20 +21,31 @@ int main()
 	std::cout << "////////// INIT CLAP TRAP////////" << std::endl;
 	FragTrap a("Alessio");
 	ScavTrap b("Elias");
+	NinjaTrap c("Pierre");
+	SuperTrap d("Mathieu");
 	std::cout << "///////////////// 1 /////////////" << std::endl;
 	a.rangedAttack(b.get());
 	b.takeDamage(a.get("Ranged"));
+	a.rangedAttack(c.get());
+	c.takeDamage(a.get("Ranged"));
+	a.rangedAttack(d.get());
+	d.takeDamage(a.get("Ranged"));
 	std::cout << "///////////////// 2 /////////////" << std::endl;
 	b.beRepaired(5);
+	c.beRepaired(10);
 	std::cout << "///////////////// 3 /////////////" << std::endl;
 	a.meleeAttack(b.get());
 	b.takeDamage(a.get("Melee"));
+	c.meleeAttack(a.get());
+	a.takeDamage(c.get("Melee"));
 	std::cout << "///////////////// 4 /////////////" << std::endl;
 	b.meleeAttack(b.get());
 	a.takeDamage(a.get("Melee"));
 	std::cout << "///////////////// 5 /////////////" << std::endl;
 	int i = a.vaulthunter_dot_exe(b.get());
 	b.takeDamage(i);
+	int y = c.ninjaShoebox(b.get());
+	b.takeDamage(y);
 	std::cout << "///////////////// 6 /////////////" << std::endl;
 	a.meleeAttack(b.get());
 	b.takeDamage(a.get("Melee"));
@@ -40,6 +53,9 @@ int main()
 	a.show();
 	std::cout << "///////////////// B /////////////" << std::endl;
 	b.show();
-	std::cout << "\n" << std::endl;
+	std::cout << "///////////////// C /////////////" << std::endl;
+	c.show();
+	std::cout << "///////////////// D /////////////" << std::endl;
+	d.show();
 	return (1);
 }

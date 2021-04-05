@@ -36,7 +36,18 @@ ScavTrap::~ScavTrap(void)
 		std::cout << this->Name << " is in his next life" << std::endl;
 }
 
-ScavTrap::ScavTrap(const ScavTrap &copy){}
+ScavTrap::ScavTrap(const ScavTrap &copy)
+{
+	Name = copy.Name;
+	Hit_points = copy.Hit_points;
+	Max_hit_points = copy.Max_hit_points;
+	Energy_points = copy.Energy_points;
+	Max_energy_points = copy.Max_energy_points;
+	Level = copy.Level;
+	Melee_attack_damage = copy.Melee_attack_damage;
+	Ranged_attack_damage = copy.Ranged_attack_damage;
+	Armor_damage_reduction = copy.Armor_damage_reduction;
+}
 
 void	ScavTrap::rangedAttack(std::string const & target)
 {

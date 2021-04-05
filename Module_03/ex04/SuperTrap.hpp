@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ClapTrap.hpp                                       :+:      :+:    :+:   */
+/*   SuperTrap.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aglorios <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -10,15 +10,17 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CLAPTRAP_HPP
-# define CLAPTRAP_HPP
+#ifndef SUPERTRAP_HPP
+# define SUPERTRAP_HPP
 
 # include <iostream>
 # include <cmath>
+# include "ClapTrap.hpp"
 
-class ClapTrap
+class SuperTrap : public ClapTrap
 {
-	protected:
+/*	
+	private:
 		int			Hit_points;
 		int			Max_hit_points;
 		int			Energy_points;
@@ -28,17 +30,14 @@ class ClapTrap
 		int			Melee_attack_damage;
 		int			Ranged_attack_damage;
 		int			Armor_damage_reduction;
+*/
 	public:
-		ClapTrap(void);
-		ClapTrap(int hit, int max_hit, int energy, int max_energy, int level, std::string name, int melee, int ranged, int armor);
-		~ClapTrap(void);
-		ClapTrap(const ClapTrap &copy);
-		void	takeDamage(unsigned int amount);
-		void	beRepaired(unsigned int amount);
-		void	beRepaired_energy(unsigned int amount);
-		std::string get(void);
-		int		get(std::string attack);
-		void	show(void);
+		SuperTrap(void);
+		SuperTrap(std::string name);
+		~SuperTrap(void);
+		SuperTrap(const SuperTrap &copy);
+		void	rangedAttack(std::string const & target);
+		void	meleeAttack(std::string const & target);
 };
 
 #endif

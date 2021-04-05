@@ -36,7 +36,18 @@ FragTrap::~FragTrap(void)
 		std::cout << this->Name << " is dead" << std::endl;
 }
 
-FragTrap::FragTrap(const FragTrap &copy){}
+FragTrap::FragTrap(const FragTrap &copy)
+{
+	Name = copy.Name;
+	Hit_points = copy.Hit_points;
+	Max_hit_points = copy.Max_hit_points;
+	Energy_points = copy.Energy_points;
+	Max_energy_points = copy.Max_energy_points;
+	Level = copy.Level;
+	Melee_attack_damage = copy.Melee_attack_damage;
+	Ranged_attack_damage = copy.Ranged_attack_damage;
+	Armor_damage_reduction = copy.Armor_damage_reduction;
+}
 
 void	FragTrap::rangedAttack(std::string const & target)
 {

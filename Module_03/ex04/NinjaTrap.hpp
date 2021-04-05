@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ClapTrap.hpp                                       :+:      :+:    :+:   */
+/*   NinjaTrap.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aglorios <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -10,15 +10,17 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CLAPTRAP_HPP
-# define CLAPTRAP_HPP
+#ifndef NINJATRAP_HPP
+# define NINJATRAP_HPP
 
 # include <iostream>
 # include <cmath>
+# include "ClapTrap.hpp"
 
-class ClapTrap
+class NinjaTrap : public ClapTrap
 {
-	protected:
+/*	
+	private:
 		int			Hit_points;
 		int			Max_hit_points;
 		int			Energy_points;
@@ -28,17 +30,15 @@ class ClapTrap
 		int			Melee_attack_damage;
 		int			Ranged_attack_damage;
 		int			Armor_damage_reduction;
+*/
 	public:
-		ClapTrap(void);
-		ClapTrap(int hit, int max_hit, int energy, int max_energy, int level, std::string name, int melee, int ranged, int armor);
-		~ClapTrap(void);
-		ClapTrap(const ClapTrap &copy);
-		void	takeDamage(unsigned int amount);
-		void	beRepaired(unsigned int amount);
-		void	beRepaired_energy(unsigned int amount);
-		std::string get(void);
-		int		get(std::string attack);
-		void	show(void);
+		NinjaTrap(void);
+		NinjaTrap(std::string name);
+		~NinjaTrap(void);
+		NinjaTrap(const NinjaTrap &copy);
+		void	rangedAttack(std::string const & target);
+		void	meleeAttack(std::string const & target);
+		int		ninjaShoebox(std::string const & target);
 };
 
 #endif
