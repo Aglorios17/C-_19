@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   AWeapon.hpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aglorios <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -10,37 +10,29 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Character.hpp"
-#include "Enemy.hpp"
-#include "SuperMutant.hpp"
-#include "AWeapon.hpp"
-#include "PlasmaRifle.hpp"
-#include "PowerFist.hpp"
-#include "RadScorpion.hpp"
+#ifndef AWEAPON_HPP
+# define AWEAPON_HPP
 
-int main()
+# include <iostream>
+
+class AWeapon
 {
-	Character* moi = new Character("moi");
+	protected:
+		std::string Name;
+		int			Damage;
+		int			AP;
+		std::string	Sound;
+		std::string	Effect;
+	public:
+		AWeapon(void);
+		AWeapon(std::string const & name, int apcost, int damage);
+		AWeapon(const AWeapon &copy);
+		~AWeapon();
+		std::string	[...] getName() const;
+		int getAPCost() const;
+		int getDamage() const;
+		[...]
+		void attack() const = 0;
+};
 
-	std::cout << *moi;
-
-	Enemy* b = new RadScorpion();
-
-	AWeapon* pr = new PlasmaRifle();
-	AWeapon* pf = new PowerFist();
-
-	moi->equip(pr);
-	std::cout << *moi;
-	moi->equip(pf);
-
-	moi->attack(b);
-	std::cout << *moi;
-	moi->equip(pr);
-	std::cout << *moi;
-	moi->attack(b);
-	std::cout << *moi;
-	moi->attack(b);
-	std::cout << *moi;
-
-	return 0;
-}
+#endif
