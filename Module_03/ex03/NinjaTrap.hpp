@@ -16,21 +16,11 @@
 # include <iostream>
 # include <cmath>
 # include "ClapTrap.hpp"
+# include "ScavTrap.hpp"
+# include "FragTrap.hpp"
 
 class NinjaTrap : public ClapTrap
 {
-/*	
-	private:
-		int			Hit_points;
-		int			Max_hit_points;
-		int			Energy_points;
-		int			Max_energy_points;
-		int			Level;
-		std::string	Name;
-		int			Melee_attack_damage;
-		int			Ranged_attack_damage;
-		int			Armor_damage_reduction;
-*/
 	public:
 		NinjaTrap(void);
 		NinjaTrap(std::string name);
@@ -38,7 +28,10 @@ class NinjaTrap : public ClapTrap
 		NinjaTrap(const NinjaTrap &copy);
 		void	rangedAttack(std::string const & target);
 		void	meleeAttack(std::string const & target);
-		int		ninjaShoebox(std::string const & target);
+		void	ninjaShoebox(Claptrap const & target);
+		void	ninjaShoebox(Scavtrap const & target);
+		void	ninjaShoebox(Fragtrap const & target);
+		void	ninjaShoebox(Ninjatrap const & target);
 };
 
 #endif

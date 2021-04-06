@@ -15,22 +15,12 @@
 
 # include <iostream>
 # include <cmath>
+# include "NinjaTrap.hpp"
+# include "FragTrap.hpp"
 # include "ClapTrap.hpp"
 
-class SuperTrap : public ClapTrap
+class SuperTrap : public NinjaTrap, public FragTrap
 {
-/*	
-	private:
-		int			Hit_points;
-		int			Max_hit_points;
-		int			Energy_points;
-		int			Max_energy_points;
-		int			Level;
-		std::string	Name;
-		int			Melee_attack_damage;
-		int			Ranged_attack_damage;
-		int			Armor_damage_reduction;
-*/
 	public:
 		SuperTrap(void);
 		SuperTrap(std::string name);

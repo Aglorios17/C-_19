@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   SuperTrap.cpp                                      :+:      :+:    :+:   */
+/*   Wolf.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aglorios <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -10,35 +10,24 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "SuperTrap.hpp"
-#include "ClapTrap.hpp"
+#include "Wolf.hpp"
 
-SuperTrap::SuperTrap(void){}
+Wolf::Wolf(void) {}
 
-SuperTrap::SuperTrap(std::string name) : ClapTrap(100, 100, 120, 120, 1, name, 60, 20, 5)
+Wolf::Wolf(std::string name)
 {
-	std::cout << this->Name << " appeared" << std::endl;
+	this->Name = name;
+	std::cout << this->Name << " said : rrrh I'm an aplha" << std::endl;
 }
 
-SuperTrap::~SuperTrap(void)
+Wolf::Wolf(const Wolf &copy) : Victim(copy) {}
+
+Wolf::~Wolf(void)
 {
-	if (this->Hit_points > 0)
-		std::cout << this->Name << " left" << std::endl;
-	else
-		std::cout << this->Name << " is dead" << std::endl;
+	std::cout << this->Name << " said : argh..." << std::endl;
 }
 
-SuperTrap::SuperTrap(const SuperTrap &copy) : ClapTrap(copy)
+void	Wolf::getPolymorphed(void) const
 {
-	std::cout << "Copy SuperTrap is called" << std::endl;
-}
-
-void	SuperTrap::rangedAttack(std::string const & target)
-{
-	FragTrap::rangedAttack(target);
-}
-
-void	SuperTrap::meleeAttack(std::string const & target)
-{
-	ScavTrap::meleeAttack(target);
+	std::cout << this->Name << " was just polymorphed into a Chiwawa!" << std::endl;
 }

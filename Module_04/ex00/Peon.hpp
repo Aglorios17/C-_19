@@ -9,3 +9,21 @@
 /*   Updated: 2021/03/11 19:23:51 by aglorios         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#ifndef PEON_HPP
+# define PEON_HPP
+
+# include <iostream>
+# include "Victim.hpp"
+
+class Peon : public Victim
+{
+	public:
+		Peon(void);
+		Peon(std::string name);
+		Peon(const Peon &copy);
+		virtual ~Peon(void);
+		virtual void getPolymorphed(void) const;
+};
+
+#endif

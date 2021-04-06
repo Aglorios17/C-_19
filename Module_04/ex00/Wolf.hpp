@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   SuperTrap.cpp                                      :+:      :+:    :+:   */
+/*   Wolf.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aglorios <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -10,35 +10,20 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "SuperTrap.hpp"
-#include "ClapTrap.hpp"
+#ifndef WOLF_HPP
+# define WOLF_HPP
 
-SuperTrap::SuperTrap(void){}
+# include <iostream>
+# include "Victim.hpp"
 
-SuperTrap::SuperTrap(std::string name) : ClapTrap(100, 100, 120, 120, 1, name, 60, 20, 5)
+class Wolf : public Victim
 {
-	std::cout << this->Name << " appeared" << std::endl;
-}
+	public:
+		Wolf(void);
+		Wolf(std::string name);
+		Wolf(const Wolf &copy);
+		virtual ~Wolf(void);
+		virtual void getPolymorphed(void) const;
+};
 
-SuperTrap::~SuperTrap(void)
-{
-	if (this->Hit_points > 0)
-		std::cout << this->Name << " left" << std::endl;
-	else
-		std::cout << this->Name << " is dead" << std::endl;
-}
-
-SuperTrap::SuperTrap(const SuperTrap &copy) : ClapTrap(copy)
-{
-	std::cout << "Copy SuperTrap is called" << std::endl;
-}
-
-void	SuperTrap::rangedAttack(std::string const & target)
-{
-	FragTrap::rangedAttack(target);
-}
-
-void	SuperTrap::meleeAttack(std::string const & target)
-{
-	ScavTrap::meleeAttack(target);
-}
+#endif

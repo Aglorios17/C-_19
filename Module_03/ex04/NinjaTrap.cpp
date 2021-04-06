@@ -17,16 +17,6 @@ NinjaTrap::NinjaTrap(void){}
 
 NinjaTrap::NinjaTrap(std::string name) : ClapTrap(60, 60, 120, 120, 1, name, 60, 5, 0)
 {
-/*	this->Name = name;
-	this->Hit_points = 100;
-	this->Max_hit_points = 100;
-	this->Energy_points = 100;
-	this->Max_energy_points = 100;
-	this->Level = 1;
-	this->Melee_attack_damage = 50;
-	this->Ranged_attack_damage = 20;
-	this->Armor_damage_reduction = 5;
-*/
 	std::cout << "Ninja " << this->Name << " appeared" << std::endl;
 }
 
@@ -42,20 +32,7 @@ NinjaTrap::NinjaTrap(const NinjaTrap &copy) : ClapTrap(copy)
 {
 	std::cout << "Copy NinjaTrap is called" << std::endl;
 }
-/*
-FragTrap::FragTrap(const FragTrap &copy)
-{
-	Name = copy.Name;
-	Hit_points = copy.Hit_points;
-	Max_hit_points = copy.Max_hit_points;
-	Energy_points = copy.Energy_points;
-	Max_energy_points = copy.Max_energy_points;
-	Level = copy.Level;
-	Melee_attack_damage = copy.Melee_attack_damage;
-	Ranged_attack_damage = copy.Ranged_attack_damage;
-	Armor_damage_reduction = copy.Armor_damage_reduction;
-}
-*/
+
 void	NinjaTrap::rangedAttack(std::string const & target)
 {
 	std::cout << "NINJ4-TP " << this->Name << " attaque " << target << " a distance, causant " << this->Ranged_attack_damage << " points de degats !" << std::endl; 

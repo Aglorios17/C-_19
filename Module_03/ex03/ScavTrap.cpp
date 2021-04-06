@@ -17,16 +17,6 @@ ScavTrap::ScavTrap(void){}
 
 ScavTrap::ScavTrap(std::string name) : ClapTrap(100, 100, 50, 50, 1, name, 20, 15, 3)
 {
-/*	this->Name = name;
-	this->Hit_points = 100;
-	this->Max_hit_points = 100;
-	this->Energy_points = 50;
-	this->Max_energy_points = 50;
-	this->Level = 1;
-	this->Melee_attack_damage = 20;
-	this->Ranged_attack_damage = 15;
-	this->Armor_damage_reduction = 3;
-*/
 	std::cout << this->Name << " is here" << std::endl;
 }
 
@@ -42,20 +32,7 @@ ScavTrap::ScavTrap(const ScavTrap &copy) : ClapTrap(copy)
 {
 	std::cout << "Copy ScavTrap is called" << std::endl;
 }
-/*
-ScavTrap::ScavTrap(const ScavTrap &copy)
-{
-	Name = copy.Name;
-	Hit_points = copy.Hit_points;
-	Max_hit_points = copy.Max_hit_points;
-	Energy_points = copy.Energy_points;
-	Max_energy_points = copy.Max_energy_points;
-	Level = copy.Level;
-	Melee_attack_damage = copy.Melee_attack_damage;
-	Ranged_attack_damage = copy.Ranged_attack_damage;
-	Armor_damage_reduction = copy.Armor_damage_reduction;
-}
-*/
+
 void	ScavTrap::rangedAttack(std::string const & target)
 {
 	std::cout << "SC4V-TR4P " << this->Name << " attaque " << target << " a distance, causant " << this->Ranged_attack_damage << " points de degats !" << std::endl; 
