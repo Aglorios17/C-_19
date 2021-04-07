@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Enemy.hpp                                          :+:      :+:    :+:   */
+/*   PlasmaRifle.cpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aglorios <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -10,24 +10,19 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ENEMY_HPP
-# define ENEMY_HPP
+# include "AWeapon.hpp"
+# include "PlasmaRifle.hpp"
 
-# include <iostream>
+PlasmaRifle::PlasmaRifle(void) {}
 
-class Enemy
+PlasmaRifle::PlasmaRifle(std::string const & name, int apcost, int damage) : AWeapon(name, apcost, damage)
+{}
+
+PlasmaRifle::PlasmaRifle(const PlasmaRifle &copy) AWeapon(copy) {}
+
+PlasmaRifle::~PlasmaRifle(void) AWeapon(copy) {}
+
+void	PlasmaRifle::attack(void) const
 {
-	protected:
-		int			HP;
-		std::string Type;
-	public:
-		Enemy(void);
-		Enemy(int hp, std::string const & type);
-		Enemy(const Enemy &copy);
-		~Enemy(void);
-		std::string getType(void) const;
-		int getHP(void) const;
-		virtual void takeDamage(int damage);
-};
-
-#endif
+	std::cout << "* piouuu piouuu piouuu *" << std::endl;
+}

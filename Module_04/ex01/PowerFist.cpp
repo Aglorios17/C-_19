@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Enemy.hpp                                          :+:      :+:    :+:   */
+/*   PowerFist.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aglorios <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -10,24 +10,19 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ENEMY_HPP
-# define ENEMY_HPP
+# include "AWeapon.hpp"
+# include "PowerFist.hpp"
 
-# include <iostream>
+PowerFist::PowerFist(void) {}
 
-class Enemy
+PowerFist::PowerFist(std::string const & name, int apcost, int damage) : AWeapon(name, apcost, damage)
+{}
+
+PowerFist::PowerFist(const PowerFist &copy) AWeapon(copy) {}
+
+PowerFist::~PowerFist(void) AWeapon(copy) {}
+
+void	PowerFist::attack(void) const
 {
-	protected:
-		int			HP;
-		std::string Type;
-	public:
-		Enemy(void);
-		Enemy(int hp, std::string const & type);
-		Enemy(const Enemy &copy);
-		~Enemy(void);
-		std::string getType(void) const;
-		int getHP(void) const;
-		virtual void takeDamage(int damage);
-};
-
-#endif
+	std::cout << "* pschhh... SBAM ! *" << std::endl;
+}

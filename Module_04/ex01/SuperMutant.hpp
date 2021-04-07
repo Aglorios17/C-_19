@@ -23,6 +23,7 @@ class SuperMutant : public Enemy
 		SuperMutant(std::string const & type, int hp);
 		SuperMutant(const SuperMutant &copy);
 		~SuperMutant(void);
+		virtual void takeDamge(int damage);
 };
 
 #endif

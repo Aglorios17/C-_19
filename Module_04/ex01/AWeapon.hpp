@@ -21,8 +21,6 @@ class AWeapon
 		std::string Name;
 		int			Damage;
 		int			AP;
-		std::string	Sound;
-		std::string	Effect;
 	public:
 		AWeapon(void);
 		AWeapon(std::string const & name, int apcost, int damage);

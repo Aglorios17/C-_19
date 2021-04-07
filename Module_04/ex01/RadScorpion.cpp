@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Enemy.hpp                                          :+:      :+:    :+:   */
+/*   RadScorpion.cpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aglorios <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -10,24 +10,18 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ENEMY_HPP
-# define ENEMY_HPP
+# include "RadScorpion.hpp"
 
-# include <iostream>
+RadScorpion::RadScorpion(void) {}
 
-class Enemy
+RadScorpion::RadScorpion(int hp, std::string const & type) : Enemy(hp, type) 
 {
-	protected:
-		int			HP;
-		std::string Type;
-	public:
-		Enemy(void);
-		Enemy(int hp, std::string const & type);
-		Enemy(const Enemy &copy);
-		~Enemy(void);
-		std::string getType(void) const;
-		int getHP(void) const;
-		virtual void takeDamage(int damage);
-};
+	std::cout << "* click click click *" << std::endl;
+}
 
-#endif
+RadScorpion::RadScorpion(const RadScorpion &copy) : Enemy(copy) {}
+
+RadScorpion::~RadScorpion(void) 
+{
+	std::cout << "* SPROTCH *" << std::endl;
+}

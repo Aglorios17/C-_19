@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Enemy.hpp                                          :+:      :+:    :+:   */
+/*   AWeapon.cpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aglorios <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -10,24 +10,40 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ENEMY_HPP
-# define ENEMY_HPP
+# include "AWeapon.hpp"
 
-# include <iostream>
+AWeapon::AWeapon(void) {}
 
-class Enemy
+AWeapon::AWeapon(std::string const & name, int apcost, int damage)
 {
-	protected:
-		int			HP;
-		std::string Type;
-	public:
-		Enemy(void);
-		Enemy(int hp, std::string const & type);
-		Enemy(const Enemy &copy);
-		~Enemy(void);
-		std::string getType(void) const;
-		int getHP(void) const;
-		virtual void takeDamage(int damage);
-};
+	this->Name = name;
+	this->AP = apcost;
+	this->Damage = damage;
+}
 
-#endif
+AWeapon::AWeapon(const AWeapon &copy)
+{
+	Name = copy.Name;
+	AP = copy.AP;
+	Damage = copy.Damage;
+}
+
+AWeapon::~AWeapon() {}
+
+std::string	AWeapon::getName(void) const
+{
+	return (this->Name);
+}
+
+int			AWeapon::getAPCost(void) const
+{
+	return (this->AP);
+}
+
+int 		AWeapon::getDamage(void) const
+{
+	return (this->Damage);
+}
+
+void 		AWeaponattack(void) const = 0
+{}

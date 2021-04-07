@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Enemy.hpp                                          :+:      :+:    :+:   */
+/*   Enemy.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aglorios <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -10,24 +10,38 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ENEMY_HPP
-# define ENEMY_HPP
+# include "Enemmy.hpp"
 
-# include <iostream>
+Enemy::Enemy(void) {}
 
-class Enemy
+Enemy::Enemy(int hp, std::string const & type)
 {
-	protected:
-		int			HP;
-		std::string Type;
-	public:
-		Enemy(void);
-		Enemy(int hp, std::string const & type);
-		Enemy(const Enemy &copy);
-		~Enemy(void);
-		std::string getType(void) const;
-		int getHP(void) const;
-		virtual void takeDamage(int damage);
-};
+	this->HP = hp;
+	this->Type = type;
+}
 
-#endif
+Enemy::Enemy(const Enemy &copy)
+{
+	HP = copy.HP;
+	Type = copy.Type;
+}
+Enemy::~Enemy(void) {}
+
+std::string Enemy::getType(void) const
+{
+	return (this->Type);
+}
+
+int Enemy::getHP() const
+{
+	return (this->HP);
+}
+
+void Enemy::takeDamage(int damage)
+{
+	if (this->HP > damage)
+		this->HP -= damage;
+	else
+		this->HP = 0;
+	std::cout << this->Type << " a maintenant " << this->HP << " points de vie !" << std::endl;	
+}

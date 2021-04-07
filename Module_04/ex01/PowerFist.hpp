@@ -23,6 +23,7 @@ class PowerFist : public AWeapon
 		PowerFist(std::string const & name, int apcost, int damage);
 		PowerFist(const PowerFist &copy);
 		~PowerFist(void);
+		void attack(void) const;
 };
 
 #endif

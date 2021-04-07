@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Enemy.hpp                                          :+:      :+:    :+:   */
+/*   SuperMutant.cpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aglorios <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -10,24 +10,28 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ENEMY_HPP
-# define ENEMY_HPP
+# include "SuperMutant.hpp"
 
-# include <iostream>
+SuperMutant::SuperMutant(void) {}
 
-class Enemy
+SuperMutant::SuperMutant(int hp, std::string const & type) : Enemy(hp, type) 
 {
-	protected:
-		int			HP;
-		std::string Type;
-	public:
-		Enemy(void);
-		Enemy(int hp, std::string const & type);
-		Enemy(const Enemy &copy);
-		~Enemy(void);
-		std::string getType(void) const;
-		int getHP(void) const;
-		virtual void takeDamage(int damage);
-};
+	std::cout << "Gaaah. Break everything !" << std::endl;
+}
 
-#endif
+SuperMutant::SuperMutant(const SuperMutant &copy) : Enemy(copy) {}
+
+SuperMutant::~SuperMutant(void) 
+{
+	std::cout << "Aaargh ..." << std::endl;
+}
+
+void SuperMutant::takeDamage(int damage)
+{
+	damage -= 3;
+	if (this->HP > damage)
+		this->HP -= damage;
+	else
+		this->HP = 0;
+	std::cout << this->Type << " a maintenant " << this->HP << " points de vie !" << std::endl;	
+}
