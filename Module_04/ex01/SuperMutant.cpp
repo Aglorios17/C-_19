@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 # include "SuperMutant.hpp"
+# include "Enemy.hpp"
 
 SuperMutant::SuperMutant(void) {}
 

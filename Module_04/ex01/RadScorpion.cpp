@@ -11,6 +11,7 @@
 /* ************************************************************************** */
 
 # include "RadScorpion.hpp"
+# include "Enemy.hpp"
 
 RadScorpion::RadScorpion(void) {}
 

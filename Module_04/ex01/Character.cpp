@@ -10,26 +10,34 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CHARACTER_HPP
-# define CHARACTER_HPP
+# include "Character.hpp"
+# include "Enemy.hpp"
 
-# include <iostream>
+Character::Character(void) {}	
 
-class Character
+Character::Character(std::string const & name)
 {
-	private:
-		int			AP;
-		std::string	Name;
-		Character	charact;
-	public:
-		Character(void);
-		Character(std::string const & name);
-		Character(const Character &copy);
-		~Character(void);
-		void recoverAP(void);
-		void equip(AWeapon*);
-		void attack(Enemy*);
-		std::string [...] getName(void) const;
-};
+	this->Name = name;
+	this->AP = 40;
+	this->character = AWeapon;
+}
+		
+Character::Character(const Character &copy)
+{
+	Name = copy.Name;
+	AP = copy.AP;
+	character = copy.character;
+}
 
-#endif
+Character::~Character(void) {}
+
+void Character::recoverAP(void) {}
+
+void Character::equip(AWeapon*) {}
+
+void Character::attack(Enemy*) {}
+
+std::string Character::getName(void) const
+{
+	return (this->Name);
+}
