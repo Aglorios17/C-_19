@@ -37,6 +37,7 @@ class ClapTrap
 		void	beRepaired(unsigned int amount);
 		void	beRepaired_energy(unsigned int amount);
 		std::string get(void);
+		std::string getName(void) const;
 		int		get(std::string attack);
 		void	show(void);
 };

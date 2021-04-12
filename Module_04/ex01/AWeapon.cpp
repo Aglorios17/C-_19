@@ -45,5 +45,5 @@ int 		AWeapon::getDamage(void) const
 	return (this->Damage);
 }
 
-void 		AWeaponattack(void) const = 0
-{}
+//void 		AWeaponattack(void) const = 0
+//{}

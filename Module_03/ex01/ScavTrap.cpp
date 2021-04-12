@@ -25,15 +25,15 @@ ScavTrap::ScavTrap(std::string name)
 	this->Melee_attack_damage = 20;
 	this->Ranged_attack_damage = 15;
 	this->Armor_damage_reduction = 3;
-	std::cout << this->Name << " is here" << std::endl;
+	std::cout << "SC4V-TP " << this->Name << " is here" << std::endl;
 }
 
 ScavTrap::~ScavTrap(void)
 {
 	if (this->Hit_points > 0)
-		std::cout << this->Name << " desappears" << std::endl;
+		std::cout << "SC4V-TP " << this->Name << " desappears" << std::endl;
 	else
-		std::cout << this->Name << " is in his next life" << std::endl;
+		std::cout << "SC4V-TP " << this->Name << " is in his next life" << std::endl;
 }
 
 ScavTrap::ScavTrap(const ScavTrap &copy)
@@ -51,12 +51,12 @@ ScavTrap::ScavTrap(const ScavTrap &copy)
 
 void	ScavTrap::rangedAttack(std::string const & target)
 {
-	std::cout << "SC4V-TR4P " << this->Name << " attaque " << target << " a distance, causant " << this->Ranged_attack_damage << " points de degats !" << std::endl; 
+	std::cout << "SC4V-TP " << this->Name << " attaque " << target << " a distance, causant " << this->Ranged_attack_damage << " points de degats !" << std::endl; 
 }
 
 void	ScavTrap::meleeAttack(std::string const & target)
 {
-	std::cout << "SC4V-TR4P " << this->Name << " attaque " << target << " par melee, causant " << this->Melee_attack_damage << " points de degats !" <<std::endl;
+	std::cout << "SC4V-TP " << this->Name << " attaque " << target << " par melee, causant " << this->Melee_attack_damage << " points de degats !" <<std::endl;
 }
 
 void	ScavTrap::takeDamage(unsigned int amount)
@@ -65,32 +65,32 @@ void	ScavTrap::takeDamage(unsigned int amount)
 		amount -= this->Armor_damage_reduction;
 	else
 		amount = 0;
-	std::cout << "SC4V-TR4P "<< this->Name << " perd " << amount << " points de degats ! (armor reduction : " << this->Armor_damage_reduction << " )." << std::endl;
+	std::cout << "SC4V-TP "<< this->Name << " perd " << amount << " points de degats ! (armor reduction : " << this->Armor_damage_reduction << " )." << std::endl;
 	if (this->Hit_points > amount)
 		this->Hit_points -= amount;
 	else
 		this->Hit_points = 0;
-	std::cout << "SC4V-TR4P " << this->Name << " a maintenant " << this->Hit_points << " points de vie !" << std::endl;
+	std::cout << "SC4V-TP " << this->Name << " a maintenant " << this->Hit_points << " points de vie !" << std::endl;
 }
 
 void	ScavTrap::beRepaired(unsigned int amount)
 {
-	std::cout << "SC4V-TR4P " << this->Name << " gagne " << amount << " points de vie !" << std::endl;
+	std::cout << "SC4V-TP " << this->Name << " gagne " << amount << " points de vie !" << std::endl;
 	if ((amount + this->Hit_points) < this->Max_hit_points)
 		this->Hit_points += amount;
 	else
 		this->Hit_points = 100;
-	std::cout << "SC4V-TR4P " << this->Name << " a maintenant " << this->Hit_points << " points de vie !" << std::endl;
+	std::cout << "SC4V-TP " << this->Name << " a maintenant " << this->Hit_points << " points de vie !" << std::endl;
 }
 
 void	ScavTrap::beRepaired_energy(unsigned int amount)
 {
-	std::cout << "SC4V-TR4P " << this->Name << " gagne " << amount << " points d'energy !" << std::endl;
+	std::cout << "SC4V-TP " << this->Name << " gagne " << amount << " points d'energy !" << std::endl;
 	if ((amount + this->Energy_points) < this->Max_energy_points)
 		this->Energy_points += amount;
 	else
 		this->Energy_points = 100;
-	std::cout << "SC4V-TR4P " << this->Name << " a maintenant " << this->Energy_points << " points d'energy !" << std::endl;
+	std::cout << "SC4V-TP " << this->Name << " a maintenant " << this->Energy_points << " points d'energy !" << std::endl;
 }
 
 std::string	ScavTrap::get(void)
@@ -115,10 +115,10 @@ int	ScavTrap::challengeNewcomer(std::string const & target)
 		srand(time(0));
 		int i = rand() % 5;
 		this->Energy_points -= 25;	
-		std::cout << "SC4V-TR4P " << this->Name << " propose a " << target <<  " de faire '" << attack[i] << "' ! Il perd 25 d'energie actuellement : " << this->Energy_points << std::endl;
+		std::cout << "SC4V-TP " << this->Name << " propose a " << target <<  " de faire '" << attack[i] << "' ! Il perd 25 d'energie actuellement : " << this->Energy_points << std::endl;
 	}
 	else
-		std::cout << "SC4V-TR4P " << this->Name << " a besoin de 25 points d'energie, actuellement : " << this->Energy_points << " points !" << std::endl;
+		std::cout << "SC4V-TP " << this->Name << " a besoin de 25 points d'energie, actuellement : " << this->Energy_points << " points !" << std::endl;
 	return (0);
 }
 

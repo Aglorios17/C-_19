@@ -14,22 +14,28 @@
 # define CHARACTER_HPP
 
 # include <iostream>
+# include "AWeapon.hpp"
+# include "Enemy.hpp"
 
 class Character
 {
 	private:
 		int			AP;
 		std::string	Name;
-		Character	charact;
-	public:
+		AWeapon	*weapon;
 		Character(void);
+	public:
 		Character(std::string const & name);
 		Character(const Character &copy);
-		~Character(void);
+		virtual ~Character(void);
 		void recoverAP(void);
-		void equip(AWeapon*);
-		void attack(Enemy*);
-		std::string [...] getName(void) const;
+		void equip(AWeapon *weapon);
+		void attack(Enemy *enemy);
+		std::string getName(void) const;
+		int getAP(void) const;
+		AWeapon *getWeapon(void) const;
 };
+
+std::ostream &operator<<(std::ostream &out, Character const &charact);
 
 #endif

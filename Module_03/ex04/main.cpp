@@ -18,7 +18,7 @@
 int main()
 {
 	system("clear");
-	std::cout << "////////// INIT CLAP TRAP////////" << std::endl;
+	std::cout << "//////////////// INIT ////////////" << std::endl;
 	FragTrap a("Alessio");
 	ScavTrap b("Elias");
 	NinjaTrap c("Pierre");
@@ -44,8 +44,7 @@ int main()
 	std::cout << "///////////////// 5 /////////////" << std::endl;
 	int i = a.vaulthunter_dot_exe(b.get());
 	b.takeDamage(i);
-	int y = c.ninjaShoebox(b.get());
-	b.takeDamage(y);
+	c.ninjaShoebox(b);
 	std::cout << "///////////////// 6 /////////////" << std::endl;
 	a.meleeAttack(b.get());
 	b.takeDamage(a.get("Melee"));

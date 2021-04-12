@@ -17,15 +17,15 @@ SuperTrap::SuperTrap(void){}
 
 SuperTrap::SuperTrap(std::string name) : ClapTrap(100, 100, 120, 120, 1, name, 60, 20, 5)
 {
-	std::cout << this->Name << " appeared" << std::endl;
+	std::cout << "SUP3R-TP " << this->Name << " appeared" << std::endl;
 }
 
 SuperTrap::~SuperTrap(void)
 {
 	if (this->Hit_points > 0)
-		std::cout << this->Name << " left" << std::endl;
+		std::cout << "SUP3R-TP " << this->Name << " left" << std::endl;
 	else
-		std::cout << this->Name << " is dead" << std::endl;
+		std::cout << "SUP3R-TP " << this->Name << " is dead" << std::endl;
 }
 
 SuperTrap::SuperTrap(const SuperTrap &copy) : ClapTrap(copy)
@@ -40,5 +40,5 @@ void	SuperTrap::rangedAttack(std::string const & target)
 
 void	SuperTrap::meleeAttack(std::string const & target)
 {
-	ScavTrap::meleeAttack(target);
+	NinjaTrap::meleeAttack(target);
 }

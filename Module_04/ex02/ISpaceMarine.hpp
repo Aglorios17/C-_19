@@ -1,32 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   FragTrap.hpp                                       :+:      :+:    :+:   */
+/*   ISpaceMarine.hpp                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aglorios <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/03/11 14:11:51 by aglorios          #+#    #+#             */
-/*   Updated: 2021/03/11 19:23:53 by aglorios         ###   ########.fr       */
+/*   Created: 2021/03/11 14:11:42 by aglorios          #+#    #+#             */
+/*   Updated: 2021/03/11 19:23:51 by aglorios         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FRAGTRAP_HPP
-# define FRAGTRAP_HPP
+#ifndef ISPACEMARINE_HPP
+# define ISPACEMARINE_HPP
 
 # include <iostream>
-# include <cmath>
-# include "ClapTrap.hpp"
 
-class FragTrap : public virtual ClapTrap
+class ISpaceMarine
 {
-	public:
-		FragTrap(void);
-		FragTrap(std::string name);
-		~FragTrap(void);
-		FragTrap(const FragTrap &copy);
-		void	rangedAttack(std::string const & target);
-		void	meleeAttack(std::string const & target);
-		int		vaulthunter_dot_exe(std::string const & target);
+public:
+	virtual ~ISpaceMarine() {}
+	virtual ISpaceMarine *clone(void) const = 0;
+	virtual void battleCry(void) const = 0;
+	virtual void rangedAttack(void) const = 0;
+	virtual void meleeAttack(void) const = 0;
 };
 
 #endif

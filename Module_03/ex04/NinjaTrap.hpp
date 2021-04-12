@@ -16,8 +16,10 @@
 # include <iostream>
 # include <cmath>
 # include "ClapTrap.hpp"
+# include "ScavTrap.hpp"
+# include "FragTrap.hpp"
 
-class NinjaTrap : public ClapTrap
+class NinjaTrap : public virtual ClapTrap
 {
 	public:
 		NinjaTrap(void);
@@ -26,7 +28,10 @@ class NinjaTrap : public ClapTrap
 		NinjaTrap(const NinjaTrap &copy);
 		void	rangedAttack(std::string const & target);
 		void	meleeAttack(std::string const & target);
-		int		ninjaShoebox(std::string const & target);
+		void	ninjaShoebox(ClapTrap const & target);
+		void	ninjaShoebox(ScavTrap const & target);
+		void	ninjaShoebox(FragTrap const & target);
+		void	ninjaShoebox(NinjaTrap const & target);
 };
 
 #endif

@@ -15,7 +15,7 @@
 
 RadScorpion::RadScorpion(void) {}
 
-RadScorpion::RadScorpion(int hp, std::string const & type) : Enemy(hp, type) 
+RadScorpion::RadScorpion(std::string const & type, int HP) : Enemy(HP, type) 
 {
 	std::cout << "* click click click *" << std::endl;
 }

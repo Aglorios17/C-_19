@@ -22,7 +22,7 @@ class RadScorpion : public Enemy
 		RadScorpion(void);
 		RadScorpion(std::string const & type, int hp);
 		RadScorpion(const RadScorpion &copy);
-		~RadScorpion(void);
+		virtual ~RadScorpion(void);
 };
 
 #endif

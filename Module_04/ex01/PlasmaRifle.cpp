@@ -18,9 +18,9 @@ PlasmaRifle::PlasmaRifle(void) {}
 PlasmaRifle::PlasmaRifle(std::string const & name, int apcost, int damage) : AWeapon(name, apcost, damage)
 {}
 
-PlasmaRifle::PlasmaRifle(const PlasmaRifle &copy) AWeapon(copy) {}
+PlasmaRifle::PlasmaRifle(const PlasmaRifle &copy) : AWeapon(copy) {}
 
-PlasmaRifle::~PlasmaRifle(void) AWeapon(copy) {}
+PlasmaRifle::~PlasmaRifle(void) {}
 
 void	PlasmaRifle::attack(void) const
 {

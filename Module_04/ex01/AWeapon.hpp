@@ -21,16 +21,15 @@ class AWeapon
 		std::string Name;
 		int			Damage;
 		int			AP;
-	public:
 		AWeapon(void);
+	public:
 		AWeapon(std::string const & name, int apcost, int damage);
 		AWeapon(const AWeapon &copy);
-		~AWeapon();
-		std::string	[...] getName() const;
-		int getAPCost() const;
-		int getDamage() const;
-		[...]
-		void attack() const = 0;
+		virtual ~AWeapon(void);
+		std::string	getName() const;
+		int getAPCost(void) const;
+		int getDamage(void) const;
+		virtual void attack(void) const = 0;
 };
 
 #endif

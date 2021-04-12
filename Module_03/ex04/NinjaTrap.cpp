@@ -12,20 +12,22 @@
 
 #include "NinjaTrap.hpp"
 #include "ClapTrap.hpp"
+#include "FragTrap.hpp"
+#include "ScavTrap.hpp"
 
 NinjaTrap::NinjaTrap(void){}
 
 NinjaTrap::NinjaTrap(std::string name) : ClapTrap(60, 60, 120, 120, 1, name, 60, 5, 0)
 {
-	std::cout << "Ninja " << this->Name << " appeared" << std::endl;
+	std::cout << "NINJ4-TP " << this->Name << " appeared" << std::endl;
 }
 
 NinjaTrap::~NinjaTrap(void)
 {
 	if (this->Hit_points > 0)
-		std::cout << this->Name << " left" << std::endl;
+		std::cout << "NINJ4-TP " << this->Name << " left" << std::endl;
 	else
-		std::cout << this->Name << " is dead" << std::endl;
+		std::cout << "NINJ4-TP " << this->Name << " is dead" << std::endl;
 }
 
 NinjaTrap::NinjaTrap(const NinjaTrap &copy) : ClapTrap(copy)
@@ -43,18 +45,22 @@ void	NinjaTrap::meleeAttack(std::string const & target)
 	std::cout << "NINJ4-TP " << this->Name << " attaque " << target << " par melee, causant " << this->Melee_attack_damage << " points de degats !" <<std::endl;
 }
 
-int	NinjaTrap::ninjaShoebox(std::string const & target)
+void	NinjaTrap::ninjaShoebox(NinjaTrap const & target)
 {
-	if (this->Energy_points > 24)
-	{
-		std::string attack[] = {"Par mal de sa mere", "Coup de coude dans le ventre", "Maudit les 5 prochaines generations", "Triple brulure indienne", "Petite baleyette"};
-		srand(time(0));
-		int i = rand() % 5;
-		this->Energy_points -= 25;	
-		std::cout << this->Name << " attaque " << target <<  " avec '" << attack[i] << "' et inflige " << attack[i].size() << " points de degats ! Il perd 25 d'energie actuellement : " << this->Energy_points << std::endl;
-		return (attack[i].size());
-	}
-	else
-		std::cout << this->Name << " a besoin de 25 points d'energie, actuellement : " << this->Energy_points << " points !" << std::endl;
-	return (0);
+	std::cout << "NINJ4-TP "<< this->Name << " attack with ninjaShoebox ! on NinjaTrap " << target.getName() << std::endl;
+}
+
+void	NinjaTrap::ninjaShoebox(ClapTrap const & target)
+{
+	std::cout << "NINJ4-TP "<< this->Name << " attack with ninjaShoebox ! on ClapTrap " << target.getName() << std::endl;
+}
+
+void	NinjaTrap::ninjaShoebox(FragTrap const & target)
+{
+	std::cout << "NINJ4-TP "<< this->Name << " attack with ninjaShoebox ! on FragTrap " << target.getName() << std::endl;
+}
+
+void	NinjaTrap::ninjaShoebox(ScavTrap const & target)
+{
+	std::cout << "NINJ4-TP "<< this->Name << " attack with ninjaShoebox ! on ScavTrap " << target.getName() << std::endl;
 }

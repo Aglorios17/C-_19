@@ -15,7 +15,7 @@
 
 SuperMutant::SuperMutant(void) {}
 
-SuperMutant::SuperMutant(int hp, std::string const & type) : Enemy(hp, type) 
+SuperMutant::SuperMutant(std::string const & type, int hp) : Enemy(hp, type) 
 {
 	std::cout << "Gaaah. Break everything !" << std::endl;
 }

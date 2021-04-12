@@ -18,9 +18,9 @@ PowerFist::PowerFist(void) {}
 PowerFist::PowerFist(std::string const & name, int apcost, int damage) : AWeapon(name, apcost, damage)
 {}
 
-PowerFist::PowerFist(const PowerFist &copy) AWeapon(copy) {}
+PowerFist::PowerFist(const PowerFist &copy) : AWeapon(copy) {}
 
-PowerFist::~PowerFist(void) AWeapon(copy) {}
+PowerFist::~PowerFist(void) {}
 
 void	PowerFist::attack(void) const
 {

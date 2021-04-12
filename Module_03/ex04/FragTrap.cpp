@@ -17,15 +17,15 @@ FragTrap::FragTrap(void){}
 
 FragTrap::FragTrap(std::string name) : ClapTrap(100, 100, 100, 100, 1, name, 30, 20, 5)
 {
-	std::cout << this->Name << " appeared" << std::endl;
+	std::cout << "FR4G-TP " << this->Name << " appeared" << std::endl;
 }
 
 FragTrap::~FragTrap(void)
 {
 	if (this->Hit_points > 0)
-		std::cout << this->Name << " left" << std::endl;
+		std::cout << "FR4G-TP " << this->Name << " left" << std::endl;
 	else
-		std::cout << this->Name << " is dead" << std::endl;
+		std::cout << "FR4G-TP " << this->Name << " is dead" << std::endl;
 }
 
 FragTrap::FragTrap(const FragTrap &copy) : ClapTrap(copy)

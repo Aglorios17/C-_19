@@ -17,15 +17,15 @@ FragTrap::FragTrap(void){}
 
 FragTrap::FragTrap(std::string name) : ClapTrap(100, 100, 100, 100, 1, name, 30, 20, 5)
 {
-	std::cout << this->Name << " appeared" << std::endl;
+	std::cout << "FR4G-TP " << this->Name << " appeared" << std::endl;
 }
 
 FragTrap::~FragTrap(void)
 {
 	if (this->Hit_points > 0)
-		std::cout << this->Name << " left" << std::endl;
+		std::cout << "FR4G-TP " << this->Name << " left" << std::endl;
 	else
-		std::cout << this->Name << " is dead" << std::endl;
+		std::cout << "FR4G-TP " << this->Name << " is dead" << std::endl;
 }
 
 FragTrap::FragTrap(const FragTrap &copy) : ClapTrap(copy)
@@ -51,10 +51,10 @@ int	FragTrap::vaulthunter_dot_exe(std::string const & target)
 		srand(time(0));
 		int i = rand() % 5;
 		this->Energy_points -= 25;	
-		std::cout << this->Name << " attaque " << target <<  " avec '" << attack[i] << "' et inflige " << attack[i].size() << " points de degats ! Il perd 25 d'energie actuellement : " << this->Energy_points << std::endl;
+		std::cout << "FR4G-TP " << this->Name << " attaque " << target <<  " avec '" << attack[i] << "' et inflige " << attack[i].size() << " points de degats ! Il perd 25 d'energie actuellement : " << this->Energy_points << std::endl;
 		return (attack[i].size());
 	}
 	else
-		std::cout << this->Name << " a besoin de 25 points d'energie, actuellement : " << this->Energy_points << " points !" << std::endl;
+		std::cout << "FR4G-TP " << this->Name << " a besoin de 25 points d'energie, actuellement : " << this->Energy_points << " points !" << std::endl;
 	return (0);
 }

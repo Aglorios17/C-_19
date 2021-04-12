@@ -25,12 +25,12 @@ ClapTrap::ClapTrap(int hit, int max_hit, int energy, int max_energy, int level, 
 	this->Melee_attack_damage = melee;
 	this->Ranged_attack_damage = ranged;
 	this->Armor_damage_reduction = armor;
-	std::cout << "CL4P-TRAP " << this->Name << " called" << std::endl;
+	std::cout << "CL4P-TP " << this->Name << " called" << std::endl;
 }
 
 ClapTrap::~ClapTrap(void)
 {
-	std::cout << "CL4P-TRAP" << " desappears" << std::endl;
+	std::cout << "CL4P-TP" << " desappears" << std::endl;
 }
 
 ClapTrap::ClapTrap(const ClapTrap &copy)
@@ -52,32 +52,32 @@ void	ClapTrap::takeDamage(unsigned int amount)
 		amount -= this->Armor_damage_reduction;
 	else
 		amount = 0;
-	std::cout << "CL4P-TR4P "<< this->Name << " perd " << amount << " points de degats ! (armor reduction : " << this->Armor_damage_reduction << " )." << std::endl;
+	std::cout << "CL4P-TP "<< this->Name << " perd " << amount << " points de degats ! (armor reduction : " << this->Armor_damage_reduction << " )." << std::endl;
 	if (this->Hit_points > amount)
 		this->Hit_points -= amount;
 	else
 		this->Hit_points = 0;
-	std::cout << "CL4P-TR4P " << this->Name << " a maintenant " << this->Hit_points << " points de vie !" << std::endl;
+	std::cout << "CL4P-TP " << this->Name << " a maintenant " << this->Hit_points << " points de vie !" << std::endl;
 }
 
 void	ClapTrap::beRepaired(unsigned int amount)
 {
-	std::cout << "CL4P-TR4P " << this->Name << " gagne " << amount << " points de vie !" << std::endl;
+	std::cout << "CL4P-TP " << this->Name << " gagne " << amount << " points de vie !" << std::endl;
 	if ((amount + this->Hit_points) < this->Max_hit_points)
 		this->Hit_points += amount;
 	else
 		this->Hit_points = 100;
-	std::cout << "CL4P-TR4P " << this->Name << " a maintenant " << this->Hit_points << " points de vie !" << std::endl;
+	std::cout << "CL4P-TP " << this->Name << " a maintenant " << this->Hit_points << " points de vie !" << std::endl;
 }
 
 void	ClapTrap::beRepaired_energy(unsigned int amount)
 {
-	std::cout << "CL4P-TR4P " << this->Name << " gagne " << amount << " points d'energy !" << std::endl;
+	std::cout << "CL4P-TP " << this->Name << " gagne " << amount << " points d'energy !" << std::endl;
 	if ((amount + this->Energy_points) < this->Max_energy_points)
 		this->Energy_points += amount;
 	else
 		this->Energy_points = 100;
-	std::cout << "CL4P-TR4P " << this->Name << " a maintenant " << this->Energy_points << " points d'energy !" << std::endl;
+	std::cout << "CL4P-TP " << this->Name << " a maintenant " << this->Energy_points << " points d'energy !" << std::endl;
 }
 
 std::string	ClapTrap::get(void)

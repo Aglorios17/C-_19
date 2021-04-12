@@ -12,20 +12,22 @@
 
 #include "NinjaTrap.hpp"
 #include "ClapTrap.hpp"
+#include "FragTrap.hpp"
+#include "ScavTrap.hpp"
 
 NinjaTrap::NinjaTrap(void){}
 
 NinjaTrap::NinjaTrap(std::string name) : ClapTrap(60, 60, 120, 120, 1, name, 60, 5, 0)
 {
-	std::cout << "Ninja " << this->Name << " appeared" << std::endl;
+	std::cout << "NINJ4-TP " << this->Name << " appeared" << std::endl;
 }
 
 NinjaTrap::~NinjaTrap(void)
 {
 	if (this->Hit_points > 0)
-		std::cout << this->Name << " left" << std::endl;
+		std::cout << "NINJ4-TP " << this->Name << " left" << std::endl;
 	else
-		std::cout << this->Name << " is dead" << std::endl;
+		std::cout << "NINJ4-TP " << this->Name << " is dead" << std::endl;
 }
 
 NinjaTrap::NinjaTrap(const NinjaTrap &copy) : ClapTrap(copy)
@@ -45,24 +47,20 @@ void	NinjaTrap::meleeAttack(std::string const & target)
 
 void	NinjaTrap::ninjaShoebox(NinjaTrap const & target)
 {
-		std::cout << "NINJ4-TP "<< this->Name << "  attack with ninjaShoebox ! on NinjaTrap " << target << std::endl;
-	return (0);
+	std::cout << "NINJ4-TP "<< this->Name << " attack with ninjaShoebox ! on NinjaTrap " << target.getName() << std::endl;
 }
 
 void	NinjaTrap::ninjaShoebox(ClapTrap const & target)
 {
-		std::cout << "NINJ4-TP "<< this->Name << "  attack with ninjaShoebox ! on ClapTrap " << target << std::endl;
-	return (0);
+	std::cout << "NINJ4-TP "<< this->Name << " attack with ninjaShoebox ! on ClapTrap " << target.getName() << std::endl;
 }
 
 void	NinjaTrap::ninjaShoebox(FragTrap const & target)
 {
-		std::cout << "NINJ4-TP "<< this->Name << "  attack with ninjaShoebox ! on FragTrap " << target << std::endl;
-	return (0);
+	std::cout << "NINJ4-TP "<< this->Name << " attack with ninjaShoebox ! on FragTrap " << target.getName() << std::endl;
 }
 
 void	NinjaTrap::ninjaShoebox(ScavTrap const & target)
 {
-		std::cout << "NINJ4-TP "<< this->Name << "  attack with ninjaShoebox ! on ScavTrap " << target << std::endl;
-	return (0);
+	std::cout << "NINJ4-TP "<< this->Name << " attack with ninjaShoebox ! on ScavTrap " << target.getName() << std::endl;
 }

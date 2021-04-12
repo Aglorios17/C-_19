@@ -28,10 +28,10 @@ class NinjaTrap : public ClapTrap
 		NinjaTrap(const NinjaTrap &copy);
 		void	rangedAttack(std::string const & target);
 		void	meleeAttack(std::string const & target);
-		void	ninjaShoebox(Claptrap const & target);
-		void	ninjaShoebox(Scavtrap const & target);
-		void	ninjaShoebox(Fragtrap const & target);
-		void	ninjaShoebox(Ninjatrap const & target);
+		void	ninjaShoebox(ClapTrap const & target);
+		void	ninjaShoebox(ScavTrap const & target);
+		void	ninjaShoebox(FragTrap const & target);
+		void	ninjaShoebox(NinjaTrap const & target);
 };
 
 #endif

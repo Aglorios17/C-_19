@@ -19,25 +19,66 @@ Character::Character(std::string const & name)
 {
 	this->Name = name;
 	this->AP = 40;
-	this->character = AWeapon;
+	this->weapon = NULL;
 }
 		
 Character::Character(const Character &copy)
 {
 	Name = copy.Name;
 	AP = copy.AP;
-	character = copy.character;
+	weapon = copy.weapon;
 }
 
 Character::~Character(void) {}
 
-void Character::recoverAP(void) {}
+void Character::recoverAP(void)
+{
+	if (this->AP + 10 < 40)
+		this->AP += 10;
+}
 
-void Character::equip(AWeapon*) {}
+void Character::equip(AWeapon *weapon) 
+{
+	this->weapon = weapon;
+}
 
-void Character::attack(Enemy*) {}
+void Character::attack(Enemy *enemy) 
+{
+	if (!enemy || !this->weapon)
+		return ;
+	if (this->AP < this->weapon->getAPCost())
+		return ;
+	this->AP -= this->weapon->getAPCost();
+	std::cout << this->Name << " attack " << enemy->getType()
+			<< " with a " << this->weapon->getName() << std::endl;
+	this->weapon->attack();
+	enemy->takeDamage(this->weapon->getDamage());
+	if (enemy->getHP() == 0)
+		delete enemy;
+}
 
 std::string Character::getName(void) const
 {
 	return (this->Name);
+}
+
+int Character::getAP(void) const
+{
+	return (this->AP);
+}
+
+AWeapon *Character::getWeapon(void) const
+{
+	return (this->weapon);
+}
+
+std::ostream &operator<<(std::ostream &out, Character const &charact)
+{
+	out << charact.getName() << " has " << charact.getAP() << " AP and ";
+	if (charact.getWeapon())
+		out << "wields a " << charact.getWeapon();
+	else
+		out << "is unarmed";
+	out << std::endl;
+	return (out);
 }
