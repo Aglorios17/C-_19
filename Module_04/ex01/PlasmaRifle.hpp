@@ -20,7 +20,6 @@ class PlasmaRifle : public AWeapon
 {
 	public:
 		PlasmaRifle(void);
-		PlasmaRifle(std::string const & name, int apcost, int damage);
 		PlasmaRifle(const PlasmaRifle &copy);
 		virtual ~PlasmaRifle(void);
 		void attack(void) const;

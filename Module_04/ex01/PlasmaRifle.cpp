@@ -13,10 +13,7 @@
 # include "AWeapon.hpp"
 # include "PlasmaRifle.hpp"
 
-PlasmaRifle::PlasmaRifle(void) {}
-
-PlasmaRifle::PlasmaRifle(std::string const & name, int apcost, int damage) : AWeapon(name, apcost, damage)
-{}
+PlasmaRifle::PlasmaRifle(void) : AWeapon("Plasma Rifle", 5, 21) {}
 
 PlasmaRifle::PlasmaRifle(const PlasmaRifle &copy) : AWeapon(copy) {}
 

@@ -20,6 +20,7 @@
 
 int main()
 {
+	std::cout << "START" << std::endl;
 	Character* moi = new Character("moi");
 
 	std::cout << *moi;

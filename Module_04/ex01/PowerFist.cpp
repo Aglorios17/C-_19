@@ -13,10 +13,7 @@
 # include "AWeapon.hpp"
 # include "PowerFist.hpp"
 
-PowerFist::PowerFist(void) {}
-
-PowerFist::PowerFist(std::string const & name, int apcost, int damage) : AWeapon(name, apcost, damage)
-{}
+PowerFist::PowerFist(void) : AWeapon("Power Fist", 50, 8) {}
 
 PowerFist::PowerFist(const PowerFist &copy) : AWeapon(copy) {}
 

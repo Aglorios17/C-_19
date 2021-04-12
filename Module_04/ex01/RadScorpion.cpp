@@ -13,9 +13,7 @@
 # include "RadScorpion.hpp"
 # include "Enemy.hpp"
 
-RadScorpion::RadScorpion(void) {}
-
-RadScorpion::RadScorpion(std::string const & type, int HP) : Enemy(HP, type) 
+RadScorpion::RadScorpion(void) : Enemy(80, "Super Mutant") 
 {
 	std::cout << "* click click click *" << std::endl;
 }

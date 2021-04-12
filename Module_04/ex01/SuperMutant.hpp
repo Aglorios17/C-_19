@@ -20,7 +20,6 @@ class SuperMutant : public Enemy
 {
 	public:
 		SuperMutant(void);
-		SuperMutant(std::string const & type, int hp);
 		SuperMutant(const SuperMutant &copy);
 		virtual ~SuperMutant(void);
 		virtual void takeDamage(int damage);

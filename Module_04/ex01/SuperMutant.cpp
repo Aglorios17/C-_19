@@ -13,9 +13,7 @@
 # include "SuperMutant.hpp"
 # include "Enemy.hpp"
 
-SuperMutant::SuperMutant(void) {}
-
-SuperMutant::SuperMutant(std::string const & type, int hp) : Enemy(hp, type) 
+SuperMutant::SuperMutant(void) : Enemy(170, "Super  Mutant") 
 {
 	std::cout << "Gaaah. Break everything !" << std::endl;
 }

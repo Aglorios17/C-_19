@@ -20,6 +20,7 @@ Character::Character(std::string const & name)
 	this->Name = name;
 	this->AP = 40;
 	this->weapon = NULL;
+	return ;
 }
 		
 Character::Character(const Character &copy)
@@ -27,6 +28,7 @@ Character::Character(const Character &copy)
 	Name = copy.Name;
 	AP = copy.AP;
 	weapon = copy.weapon;
+	return ;
 }
 
 Character::~Character(void) {}
@@ -53,8 +55,9 @@ void Character::attack(Enemy *enemy)
 			<< " with a " << this->weapon->getName() << std::endl;
 	this->weapon->attack();
 	enemy->takeDamage(this->weapon->getDamage());
-	if (enemy->getHP() == 0)
+	if (enemy->getHP() <= 0)
 		delete enemy;
+	return ;
 }
 
 std::string Character::getName(void) const
@@ -76,7 +79,7 @@ std::ostream &operator<<(std::ostream &out, Character const &charact)
 {
 	out << charact.getName() << " has " << charact.getAP() << " AP and ";
 	if (charact.getWeapon())
-		out << "wields a " << charact.getWeapon();
+		out << "wields a " << charact.getWeapon()->getName();
 	else
 		out << "is unarmed";
 	out << std::endl;

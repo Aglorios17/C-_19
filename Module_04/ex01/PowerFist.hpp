@@ -20,7 +20,6 @@ class PowerFist : public AWeapon
 {
 	public:
 		PowerFist(void);
-		PowerFist(std::string const & name, int apcost, int damage);
 		PowerFist(const PowerFist &copy);
 		virtual ~PowerFist(void);
 		void attack(void) const;
