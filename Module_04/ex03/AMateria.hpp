@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   AMateria.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aglorios <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -10,20 +10,22 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-int main()
+#ifndef AMATERIA_HPP
+# define AMATERIA_HPP
+
+# include <iostream>
+
+class AMateria
 {
-	ISpaceMarine* bob = new TacticalMarine;
-	ISpaceMarine* jim = new AssaultTerminator;
-	ISquad* vlc = new Squad;
-	vlc->push(bob);
-	vlc->push(jim);
-	for (int i = 0; i < vlc->getCount(); ++i)
-	{
-		ISpaceMarine* cur = vlc->getUnit(i);
-		cur->battleCry();
-		cur->rangedAttack();
-		cur->meleeAttack();
-	}
-	delete vlc;
-	return 0;
+	protected:
+		unsigned int _xp;
+	public:
+		AMateria(std::string const & type);
+		~AMateria();
+		std::string const & getType() const; //Returns the materia type
+		unsigned int getXP() const; //Returns the Materia's XP
+		virtual AMateria* clone() const = 0;
+		virtual void use(ICharacter& target);
 }
+
+#endif

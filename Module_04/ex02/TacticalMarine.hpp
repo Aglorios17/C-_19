@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ISquad.hpp                                         :+:      :+:    :+:   */
+/*   TacticalMarine.hpp                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aglorios <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -10,19 +10,22 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ISQUAD_HPP
-# define ISQUAD_HPP
+#ifndef TACTICALMARINE_HPP
+# define TACTICALMARINE_HPP
 
 # include <iostream>
 # include "ISpaceMarine.hpp"
 
-class ISquad
+class TacticalMarine : public ISpaceMarine
 {
 	public:
-		virtual ~ISquad(void) {};
-		virtual int getCount(void) const = 0;
-		virtual ISpaceMarine* getUnit(int) const = 0;
-		virtual int push(ISpaceMarine*) = 0;
+		TacticalMarine(void);
+		TacticalMarine(const TacticalMarine &copy);
+		virtual ~TacticalMarine(void);
+		ISpaceMarine *clone(void) const;
+		void battleCry(void) const;
+		void rangedAttack(void) const;
+		void meleeAttack(void) const;
 };
 
 #endif

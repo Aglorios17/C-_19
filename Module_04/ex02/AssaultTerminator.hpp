@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ISquad.hpp                                         :+:      :+:    :+:   */
+/*   AssaultTerminator.hpp                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aglorios <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -10,19 +10,22 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ISQUAD_HPP
-# define ISQUAD_HPP
+#ifndef ASSAULTTERMINATOR_HPP
+# define ASSAULTTERMINATOR_HPP
 
 # include <iostream>
 # include "ISpaceMarine.hpp"
 
-class ISquad
+class AssaultTerminator : public ISpaceMarine
 {
 	public:
-		virtual ~ISquad(void) {};
-		virtual int getCount(void) const = 0;
-		virtual ISpaceMarine* getUnit(int) const = 0;
-		virtual int push(ISpaceMarine*) = 0;
+		AssaultTerminator(void);
+		AssaultTerminator(const AssaultTerminator &copy);
+		virtual ~AssaultTerminator(void);
+		ISpaceMarine *clone(void) const;
+		void battleCry(void) const;
+		void rangedAttack(void) const;
+		void meleeAttack(void) const;
 };
 
 #endif

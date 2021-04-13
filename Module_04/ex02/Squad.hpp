@@ -14,15 +14,26 @@
 # define SQUAD_HPP
 
 # include <iostream>
+# include "ISquad.hpp"
+
+typedef struct		Marine
+{
+	ISpaceMarine	*value;
+	struct Marine	*next;
+}					Marine;
 
 class Squad : public ISquad
 {
 	private:
-		int count;
+		int Count;
+		Marine *Soldats;
 	public:
 		Squad(void);
 		Squad(const Squad &copy);
 		virtual ~Squad(void);
+		int getCount(void) const;
+		ISpaceMarine *getUnit(int soldat) const;
+		int	push(ISpaceMarine *soldat);
 };
 
 #endif

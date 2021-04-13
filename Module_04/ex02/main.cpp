@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ISquad.hpp                                         :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aglorios <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -10,19 +10,28 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ISQUAD_HPP
-# define ISQUAD_HPP
+#include "ISquad.hpp"
+#include "ISpaceMarine.hpp"
+#include "Squad.hpp"
+#include "TacticalMarine.hpp"
+#include "AssaultTerminator.hpp"
 
-# include <iostream>
-# include "ISpaceMarine.hpp"
-
-class ISquad
+int main()
 {
-	public:
-		virtual ~ISquad(void) {};
-		virtual int getCount(void) const = 0;
-		virtual ISpaceMarine* getUnit(int) const = 0;
-		virtual int push(ISpaceMarine*) = 0;
-};
+	ISpaceMarine* bob = new TacticalMarine;
+	ISpaceMarine* jim = new AssaultTerminator;
 
-#endif
+	ISquad* vlc = new Squad;
+	vlc->push(bob);
+	vlc->push(jim);
+	for (int i = 0; i < vlc->getCount(); ++i)
+	{
+		ISpaceMarine* cur = vlc->getUnit(i);
+		cur->battleCry();
+		cur->rangedAttack();
+		cur->meleeAttack();
+	}
+	delete vlc;
+
+	return 0;
+}

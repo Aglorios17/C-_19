@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Sorcerer.cpp                                       :+:      :+:    :+:   */
+/*   AssaultTerminator.cpp                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aglorios <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -10,40 +10,39 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Sorcerer.hpp"
+#include "AssaultTerminator.hpp"
 
-Sorcerer::Sorcerer(void){}
-
-Sorcerer::Sorcerer(std::string name, std::string Titre)
+AssaultTerminator::AssaultTerminator(void)
 {
-	std::cout << name << ", " << Titre << ", is born !" << std::endl;
-	this->Name = name;
-	this->Title = Titre;
+	std::cout << "* teleports from space *" << std::endl; 
 }
 
-Sorcerer::Sorcerer(const Sorcerer &copy)
-{
-	Name = copy.Name;
-	Title = copy.Title;
+AssaultTerminator::AssaultTerminator(const AssaultTerminator &copy) {
+	(void)copy;
 }
 
-Sorcerer::~Sorcerer(void)
+AssaultTerminator::~AssaultTerminator(void)
 {
-	std::cout << this->Name << ", " << this->Title << ", is dead. Consequences will never be the same !" << std::endl;
+	std::cout <<  "I’ll be back ..." << std::endl; 
+}
+		
+ISpaceMarine *AssaultTerminator::clone(void) const
+{
+	AssaultTerminator *add = new AssaultTerminator(*this);
+	return (add);
 }
 
-void        Sorcerer::Polymorph(Victim const & copy) const
+void AssaultTerminator::battleCry(void) const
 {
-	copy.getPolymorphed();
+	std::cout << "This code is unclean. Purify it !" << std::endl; 
 }
 
-std::string	Sorcerer::getName(void) const
+void AssaultTerminator::rangedAttack(void) const
 {
-	return (this->Name);
+	std::cout << "* does nothing *" << std::endl; 
 }
 
-std::ostream & operator<<(std::ostream & o, Sorcerer const & copy)
+void AssaultTerminator::meleeAttack(void) const
 {
-	o << "I am " << copy.getName() << " and i like otters!" << std::endl;
-	return (o);
+	std::cout <<  "* attaque with chainfists *" << std::endl; 
 }
