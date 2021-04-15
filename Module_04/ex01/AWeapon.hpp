@@ -26,7 +26,7 @@ class AWeapon
 		AWeapon(std::string const & name, int apcost, int damage);
 		AWeapon(const AWeapon &copy);
 		virtual ~AWeapon(void);
-		std::string	getName() const;
+		std::string	getName(void) const;
 		int getAPCost(void) const;
 		int getDamage(void) const;
 		virtual void attack(void) const = 0;

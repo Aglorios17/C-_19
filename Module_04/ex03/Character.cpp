@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Character.hpp                                      :+:      :+:    :+:   */
+/*   Character.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aglorios <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -10,27 +10,46 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CHARACTER_HPP
-# define CHARACTER_HPP
+#include "Character.hpp"
 
-# include <iostream>
-# include "ICharacter.hpp"
+Character::Character(void) {}
 
-class Character : public ICharacter
+Character::Character(std::string name) 
 {
-	private:
-		AMateria	*inventory[4];
-		std::string	Name;
-		int			number;
-	public:
-		Character(void);
-		Character(std::string name);
-		Character(const Character & copy);
-		~Character(void);
-		std::string const & getName(void) const;
-		void equip(AMateria* m);
-		void unequip(int idx);
-		void use(int idx, Character& target);
-};
+	this->Name = name;
+}
 
-#endif
+Character::~Character(void) {}
+
+Character::Character(const Character & copy) 
+{
+	Name = copy.Name;
+	number = copy.number;
+	inventory = copy.inventory;
+}
+
+std::string const & Character::getName(void) const
+{
+	return (this->Name);
+}
+
+void Character::equip(AMateria* m)
+{
+	if (this->number >= 0 && this->number < 3)
+	{
+		this->inventory[this->number] = m;
+		this->number += 1;
+	}
+}
+
+void Character::unequip(int idx) 
+{
+	if (idx >= 0 && idx < 4)
+		this->inventory[idx] = 0;
+}
+
+void Character::use(int idx, Character& target)
+{
+	if (idx < this->number)
+		this->inventory[idx]->use(target);
+}

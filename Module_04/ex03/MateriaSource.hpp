@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Character.hpp                                      :+:      :+:    :+:   */
+/*   MateriaSource.hpp                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aglorios <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -10,27 +10,23 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CHARACTER_HPP
-# define CHARACTER_HPP
+#ifndef MATERIASOURCE_HPP
+# define MATERIASOURCE_HPP
 
 # include <iostream>
-# include "ICharacter.hpp"
+# include "IMateriaSource.hpp"
 
-class Character : public ICharacter
+class MateriaSource : public IMateriaSource
 {
 	private:
-		AMateria	*inventory[4];
-		std::string	Name;
-		int			number;
+		int			actual;
+		AMateria	*inv[4];
 	public:
-		Character(void);
-		Character(std::string name);
-		Character(const Character & copy);
-		~Character(void);
-		std::string const & getName(void) const;
-		void equip(AMateria* m);
-		void unequip(int idx);
-		void use(int idx, Character& target);
+		MateriaSource(void);
+		MateriaSource(const MateriaSource & copy);
+		virtual ~MateriaSource(void);
+		void learnMateria(AMateria*);
+		AMateria* createMateria(std::string const & type);
 };
 
 #endif

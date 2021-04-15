@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Character.hpp                                      :+:      :+:    :+:   */
+/*   Cure.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aglorios <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -10,27 +10,23 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CHARACTER_HPP
-# define CHARACTER_HPP
+#include "Cure.hpp"
 
-# include <iostream>
-# include "ICharacter.hpp"
+Cure::Cure(void) : AMateria("Cure") {}
 
-class Character : public ICharacter
+Cure::Cure(const Cure &copy) : AMateria(copy) {}
+
+Cure::~Cure(void) {}
+
+AMateria* Cure::clone(void) const
 {
-	private:
-		AMateria	*inventory[4];
-		std::string	Name;
-		int			number;
-	public:
-		Character(void);
-		Character(std::string name);
-		Character(const Character & copy);
-		~Character(void);
-		std::string const & getName(void) const;
-		void equip(AMateria* m);
-		void unequip(int idx);
-		void use(int idx, Character& target);
-};
+	return (new Cure(this));
+}
+
+void Cure::use(ICharacter& target);
+{
+	std::cout << "* shoots an ice bolt at " << target.getName() << " *" << std::endl;
+	AMateria::use(target);
+}
 
 #endif

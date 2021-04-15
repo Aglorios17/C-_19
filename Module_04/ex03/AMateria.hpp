@@ -18,13 +18,16 @@
 class AMateria
 {
 	protected:
-		unsigned int _xp;
+		unsigned int	_xp;
+		std::string		Type;
 	public:
+		AMateria(void);
+		AMateria(const AMateria & copy);
 		AMateria(std::string const & type);
-		~AMateria();
-		std::string const & getType() const; //Returns the materia type
-		unsigned int getXP() const; //Returns the Materia's XP
-		virtual AMateria* clone() const = 0;
+		~AMateria(void);
+		std::string const & getType(void) const; //Returns the materia type
+		unsigned int getXP(void) const; //Returns the Materia's XP
+		virtual AMateria* clone(void) const = 0;
 		virtual void use(ICharacter& target);
 }
 

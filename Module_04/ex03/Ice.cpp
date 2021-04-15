@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Character.hpp                                      :+:      :+:    :+:   */
+/*   Ice.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aglorios <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -10,27 +10,23 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CHARACTER_HPP
-# define CHARACTER_HPP
+#include "Ice.hpp"
 
-# include <iostream>
-# include "ICharacter.hpp"
+Ice::Ice(void) : AMateria("Ice") {}
 
-class Character : public ICharacter
+Ice::Ice(const Ice &copy) : AMateria(copy) {}
+
+Ice::~Ice(void) {}
+
+AMateria* Ice::clone(void) const
 {
-	private:
-		AMateria	*inventory[4];
-		std::string	Name;
-		int			number;
-	public:
-		Character(void);
-		Character(std::string name);
-		Character(const Character & copy);
-		~Character(void);
-		std::string const & getName(void) const;
-		void equip(AMateria* m);
-		void unequip(int idx);
-		void use(int idx, Character& target);
-};
+	return (new Ice(this));
+}
+
+void Ice::use(ICharacter& target);
+{
+	std::cout << "* heals " << target.getName() << "’s wounds *" << std::endl;
+	AMateria::use(target);
+}
 
 #endif

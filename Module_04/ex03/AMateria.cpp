@@ -14,14 +14,34 @@
 
 AMateria::AMateria(void) {}
 
-AMateria::AMateria(std::string const & type) {}
+AMateria::AMateria(const AMateria & copy) 
+{
+	Type = copy.Type;
+	_xp = copy._xp;
+}
+
+AMateria::AMateria(std::string const & type) 
+{
+	Type = type;
+	_xp = 0;
+}
 
 AMateria::~AMateria(void) {}
 
-std::string const & AMateria::getType(void) const {}//Returns the materia type
+std::string const & AMateria::getType(void) const
+{
+	return (this->Type);
+}
 
-unsigned int AMateria::getXP(void) const {}//Returns the Materia's XP
+unsigned int AMateria::getXP(void) const
+{
+	return (this->_xp);
+}
 
 virtual AMateria* AMateria::clone(void) const = 0 {}
 
-virtual void AMateria::use(ICharacter& target) {}
+virtual void AMateria::use(ICharacter& target)
+{
+	this->_xp += 10;
+	(void)target;
+}
