@@ -20,13 +20,11 @@ Cure::~Cure(void) {}
 
 AMateria* Cure::clone(void) const
 {
-	return (new Cure(this));
+	return (new Cure(*this));
 }
 
-void Cure::use(ICharacter& target);
+void Cure::use(ICharacter& target)
 {
 	std::cout << "* shoots an ice bolt at " << target.getName() << " *" << std::endl;
 	AMateria::use(target);
 }
-
-#endif

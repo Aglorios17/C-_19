@@ -20,13 +20,11 @@ Ice::~Ice(void) {}
 
 AMateria* Ice::clone(void) const
 {
-	return (new Ice(this));
+	return (new Ice(*this));
 }
 
-void Ice::use(ICharacter& target);
+void Ice::use(ICharacter& target)
 {
 	std::cout << "* heals " << target.getName() << "’s wounds *" << std::endl;
 	AMateria::use(target);
 }
-
-#endif

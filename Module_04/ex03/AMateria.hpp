@@ -13,7 +13,9 @@
 #ifndef AMATERIA_HPP
 # define AMATERIA_HPP
 
+class AMateria;
 # include <iostream>
+# include "ICharacter.hpp"
 
 class AMateria
 {
@@ -24,11 +26,11 @@ class AMateria
 		AMateria(void);
 		AMateria(const AMateria & copy);
 		AMateria(std::string const & type);
-		~AMateria(void);
+		virtual ~AMateria(void);
 		std::string const & getType(void) const; //Returns the materia type
 		unsigned int getXP(void) const; //Returns the Materia's XP
 		virtual AMateria* clone(void) const = 0;
 		virtual void use(ICharacter& target);
-}
+};
 
 #endif

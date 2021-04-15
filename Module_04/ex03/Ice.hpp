@@ -21,9 +21,9 @@ class Ice : public AMateria
 	public:
 		Ice(void);
 		Ice(const Ice &copy);
-		~Ice(void);
+		virtual ~Ice(void);
 		AMateria* clone(void) const;
 		virtual void use(ICharacter& target);
-}
+};
 
 #endif

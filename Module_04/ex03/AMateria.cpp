@@ -38,9 +38,7 @@ unsigned int AMateria::getXP(void) const
 	return (this->_xp);
 }
 
-virtual AMateria* AMateria::clone(void) const = 0 {}
-
-virtual void AMateria::use(ICharacter& target)
+void AMateria::use(ICharacter& target)
 {
 	this->_xp += 10;
 	(void)target;

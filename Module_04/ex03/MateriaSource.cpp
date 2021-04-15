@@ -10,11 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef MATERIASOURCE_HPP
-# define MATERIASOURCE_HPP
-
-# include <iostream>
-# include "MateriaSource.hpp"
+#include "MateriaSource.hpp"
 
 MateriaSource::MateriaSource(void) : actual(0)
 {
@@ -25,7 +21,7 @@ MateriaSource::MateriaSource(void) : actual(0)
 
 MateriaSource::MateriaSource(const MateriaSource & copy)
 {
-	inv = copy.inv;
+//	inv = copy.inv;
 	actual = copy.actual;
 }
 
@@ -51,7 +47,7 @@ AMateria* MateriaSource::createMateria(std::string const & type)
 {
 	int i = 0;
 	while (i++ < this->actual)
-		if (this->inv[i].getType() == Type)
+		if (this->inv[i]->getType() == type)
 			return (this->inv[i]->clone());
 	return (0);
 }

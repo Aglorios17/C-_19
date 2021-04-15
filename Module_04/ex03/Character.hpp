@@ -15,6 +15,8 @@
 
 # include <iostream>
 # include "ICharacter.hpp"
+# include "Ice.hpp"
+# include "Cure.hpp"
 
 class Character : public ICharacter
 {
@@ -26,7 +28,7 @@ class Character : public ICharacter
 		Character(void);
 		Character(std::string name);
 		Character(const Character & copy);
-		~Character(void);
+		virtual ~Character(void);
 		std::string const & getName(void) const;
 		void equip(AMateria* m);
 		void unequip(int idx);

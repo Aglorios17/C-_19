@@ -25,7 +25,7 @@ Character::Character(const Character & copy)
 {
 	Name = copy.Name;
 	number = copy.number;
-	inventory = copy.inventory;
+//	inventory = copy.inventory;
 }
 
 std::string const & Character::getName(void) const
