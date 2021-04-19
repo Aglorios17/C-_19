@@ -12,7 +12,10 @@
 
 #include "AMateria.hpp"
 
-AMateria::AMateria(void) {}
+AMateria::AMateria(void) 
+{
+	_xp = 0;
+}
 
 AMateria::AMateria(const AMateria & copy) 
 {

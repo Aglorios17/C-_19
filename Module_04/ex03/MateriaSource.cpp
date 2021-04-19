@@ -15,7 +15,7 @@
 MateriaSource::MateriaSource(void) : actual(0)
 {
 	int i = 0;
-	while (i != 4)
+	while (i < 4)
 		this->inv[i++] = 0;
 }
 
@@ -46,8 +46,11 @@ void MateriaSource::learnMateria(AMateria *learn)
 AMateria* MateriaSource::createMateria(std::string const & type)
 {
 	int i = 0;
-	while (i++ < this->actual)
+	while (i < this->actual)
+	{
 		if (this->inv[i]->getType() == type)
 			return (this->inv[i]->clone());
+		i++;
+	}
 	return (0);
 }

@@ -50,6 +50,8 @@ void Character::unequip(int idx)
 
 void Character::use(int idx, ICharacter& target)
 {
+	if (!this->inventory[idx])
+		return ;
 	if (idx < this->number)
 		this->inventory[idx]->use(target);
 }
