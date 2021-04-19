@@ -48,10 +48,10 @@ ISpaceMarine *Squad::getUnit(int soldat) const
 	Marine *list;
 
 	list = NULL;
-	if (soldat > this->Count)
+	if (soldat >= this->Count)
 		return (NULL);
 	list = Soldats;
-	while (soldat-- > 0)
+	while (soldat-- > 0 && list && list->next)
 		list = list->next;
 	return (list->value);
 }
