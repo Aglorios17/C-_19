@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   MateriaSource.hpp                                  :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aglorios <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -10,24 +10,4 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef MATERIASOURCE_HPP
-# define MATERIASOURCE_HPP
-
-# include <iostream>
-class MateriaSource;
-# include "IMateriaSource.hpp"
-
-class MateriaSource : public IMateriaSource
-{
-	private:
-		int			actual;
-		AMateria	*inv[4];
-	public:
-		MateriaSource(void);
-		MateriaSource(const MateriaSource & copy);
-		virtual ~MateriaSource(void);
-		void learnMateria(AMateria *);
-		AMateria* createMateria(std::string const & type);
-};
-
-#endif
+#include "Bureaucrat.hpp"

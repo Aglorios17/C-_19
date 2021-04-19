@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   MateriaSource.hpp                                  :+:      :+:    :+:   */
+/*   Bureaucrat.hpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aglorios <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -10,24 +10,29 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef MATERIASOURCE_HPP
-# define MATERIASOURCE_HPP
+#ifndef BUREAUCRAT_HPP
+# define BUREAUCRAT_HPP
 
 # include <iostream>
-class MateriaSource;
-# include "IMateriaSource.hpp"
 
-class MateriaSource : public IMateriaSource
+class Bureaucrat
 {
 	private:
-		int			actual;
-		AMateria	*inv[4];
+		std::string const Name;
+		int			Grade;
 	public:
-		MateriaSource(void);
-		MateriaSource(const MateriaSource & copy);
-		virtual ~MateriaSource(void);
-		void learnMateria(AMateria *);
-		AMateria* createMateria(std::string const & type);
+		Bureaucrat(void);
+		Bureaucrat(std::string name, int grade);
+		Bureaucrat(const Bureaucrat & copy);
+		~Bureaucrat(void);
+		int	getGrade(void) const;
+		std::string getName(void) const;
+		GradeTooHighException;
+		GradeTooLowException;
+		void grade_up(void);
+		void grade_down(void);
 };
+
+std::ostream & operator<<(std::ostream &o, const Bureaucrat &rhs);
 
 #endif

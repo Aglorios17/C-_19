@@ -14,6 +14,7 @@
 # define ICE_HPP
 
 # include <iostream>
+class Ice;
 # include "AMateria.hpp"
 
 class Ice : public AMateria

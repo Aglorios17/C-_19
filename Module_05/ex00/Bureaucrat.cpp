@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Character.cpp                                      :+:      :+:    :+:   */
+/*   Bureaucrat.cpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aglorios <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -10,46 +10,59 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Character.hpp"
+#include "Bureaucrat.hpp"
 
-Character::Character(void) {}
+Bureaucrat::Bureaucrat(void) {}
 
-Character::Character(std::string name) 
+Bureaucrat::~Bureaucrat(void) {}
+
+Bureaucrat::Bureaucrat(std::string name, int grade) 
 {
 	this->Name = name;
+	try 
+	{
+		if (grade < 1)
+			throw (grade)
+		else if (grade > 150)
+			throw (grade)
+		else
+			this->Grade = grade;
+	}
+	catch (int num > 150)
+		Bureaucrat::GradeTooLowException;
+	catch (int num < 1)
+		Bureaucrat::GradeTooHighException;
 }
 
-Character::~Character(void) {}
-
-Character::Character(const Character & copy) 
+Bureaucrat::Bureaucrat(const Bureaucrat & copy)
 {
 	Name = copy.Name;
-	number = copy.number;
-//	inventory = copy.inventory;
+	Grade = copy.Grade;
 }
 
-std::string const & Character::getName(void) const
+std::string Bureaucrat::getName(void)
 {
 	return (this->Name);
 }
 
-void Character::equip(AMateria* m)
+int Bureaucrat::getGrade(void)
 {
-	if (this->number >= 0 && this->number < 3)
-	{
-		this->inventory[this->number] = m;
-		this->number += 1;
-	}
+	return (this->Grade);
 }
 
-void Character::unequip(int idx) 
+void Bureaucrat::grade_up(void)
 {
-	if (idx >= 0 && idx < 4)
-		this->inventory[idx] = 0;
+	this->grade -= 1;
 }
 
-void Character::use(int idx, ICharacter& target)
+void Bureaucrat::grade_down(void)
 {
-	if (idx < this->number)
-		this->inventory[idx]->use(target);
+	this->grade += 1;
+}
+
+std::ostream & operator<<(std::ostream &o, const Bureaucrat &rhs)
+{
+	o << rhs.getName() << ", bureaucrat grade " << rhs.getGrade() << std::endl;
+
+	return (o);
 }
