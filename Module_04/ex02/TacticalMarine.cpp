@@ -19,7 +19,7 @@ TacticalMarine::TacticalMarine(void)
 
 TacticalMarine::TacticalMarine(const TacticalMarine &copy)
 {
-	(void)copy;
+	*this = copy;
 }
 
 TacticalMarine & TacticalMarine::operator=(const TacticalMarine &copy)

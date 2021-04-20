@@ -30,11 +30,17 @@ Character::Character(const Character & copy)
 
 Character & Character::operator=(const Character & copy) 
 {
+	int i = 0;
+
 	if (this != &copy)
 	{
 		Name = copy.Name;
 		number = copy.number;
-//		inventory = copy.inventory;
+		while (i++ < 4)
+		{
+			this->inventory[i] = NULL;
+			this->inventory[i] = copy.inventory[i]->clone();
+		}
 	}
 	return (*this);
 }

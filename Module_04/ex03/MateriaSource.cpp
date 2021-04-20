@@ -21,16 +21,21 @@ MateriaSource::MateriaSource(void) : actual(0)
 
 MateriaSource::MateriaSource(const MateriaSource & copy)
 {
-//	inv = copy.inv;
 	actual = copy.actual;
 }
 
 MateriaSource & MateriaSource::operator=(const MateriaSource & copy)
 {
+	int i = 0;
+
 	if (this != &copy)
 	{
-//		inv = copy.inv;
 		actual = copy.actual;
+		while (i++ < 4)
+		{
+			this->inv[i] = NULL;
+			this->inv[i] = copy.inv[i]->clone();
+		}
 	}
 	return (*this);
 }

@@ -35,6 +35,7 @@ class Squad : public ISquad
 		int getCount(void) const;
 		ISpaceMarine *getUnit(int soldat) const;
 		int	push(ISpaceMarine *soldat);
+		void deepCopy(const Squad &copy);
 };
 
 #endif

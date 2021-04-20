@@ -20,17 +20,13 @@ Squad::Squad(void)
 
 Squad::Squad(const Squad &copy) 
 {
-	Count = copy.Count;
-	Soldats = copy.Soldats;
+	deepCopy(copy);
 }
 
 Squad & Squad::operator=(const Squad &copy) 
 {
 	if (this != &copy)
-	{
-		Count = copy.Count;
-		Soldats = copy.Soldats;
-	}
+		deepCopy(copy);
 	return (*this);
 }
 
@@ -45,6 +41,27 @@ Squad::~Squad(void)
 		delete (this->Soldats->value);
 		delete (this->Soldats);
 		this->Soldats = fri;
+	}
+}
+
+void	Squad::deepCopy(const Squad &copy)
+{
+	Marine *fri;
+
+	fri = NULL;
+	while (Soldats)
+	{
+		fri = Soldats->next;
+		delete (Soldats->value);
+		delete (Soldats);
+		Soldats = fri;
+	}
+	Soldats = NULL;
+	fri = copy.Soldats;
+	while (fri != NULL)
+	{
+		push(fri->value->clone());
+		fri = fri->next;
 	}
 }
 
