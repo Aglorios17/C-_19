@@ -24,9 +24,10 @@ class FragTrap : public virtual ClapTrap
 		FragTrap(std::string name);
 		~FragTrap(void);
 		FragTrap(const FragTrap &copy);
+		FragTrap &operator=(FragTrap const& copy);
 		void	rangedAttack(std::string const & target);
 		void	meleeAttack(std::string const & target);
-		int		vaulthunter_dot_exe(std::string const & target);
+		unsigned int		vaulthunter_dot_exe(std::string const & target);
 };
 
 #endif

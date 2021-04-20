@@ -24,9 +24,10 @@ class ScavTrap : public ClapTrap
 		ScavTrap(std::string name);
 		~ScavTrap(void);
 		ScavTrap(const ScavTrap &copy);
+		ScavTrap &operator=(ScavTrap const& copy);
 		void	rangedAttack(std::string const & target);
 		void	meleeAttack(std::string const & target);
-		int		challengeNewcomer(std::string const & target);
+		unsigned int		challengeNewcomer(std::string const & target);
 };
 
 #endif

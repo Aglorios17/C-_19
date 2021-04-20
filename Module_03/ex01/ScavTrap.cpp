@@ -49,6 +49,23 @@ ScavTrap::ScavTrap(const ScavTrap &copy)
 	Armor_damage_reduction = copy.Armor_damage_reduction;
 }
 
+ScavTrap &ScavTrap::operator=(ScavTrap const& copy)
+{
+	if (this != &copy)
+	{
+		Name = copy.Name;
+		Hit_points = copy.Hit_points;
+		Max_hit_points = copy.Max_hit_points;
+		Energy_points = copy.Energy_points;
+		Max_energy_points = copy.Max_energy_points;
+		Level = copy.Level;
+		Melee_attack_damage = copy.Melee_attack_damage;
+		Ranged_attack_damage = copy.Ranged_attack_damage;
+		Armor_damage_reduction = copy.Armor_damage_reduction;
+	}
+	return (*this);
+}
+
 void	ScavTrap::rangedAttack(std::string const & target)
 {
 	std::cout << "SC4V-TP " << this->Name << " attaque " << target << " a distance, causant " << this->Ranged_attack_damage << " points de degats !" << std::endl; 
@@ -98,7 +115,7 @@ std::string	ScavTrap::get(void)
 	return (this->Name);
 }
 
-int	ScavTrap::get(std::string attack)
+unsigned int	ScavTrap::get(std::string attack)
 {
 	if (attack == "Melee")
 		return (this->Melee_attack_damage);
@@ -107,7 +124,7 @@ int	ScavTrap::get(std::string attack)
 	return (0);
 }
 
-int	ScavTrap::challengeNewcomer(std::string const & target)
+unsigned int	ScavTrap::challengeNewcomer(std::string const & target)
 {
 	if (this->Energy_points > 24)
 	{

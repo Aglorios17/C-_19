@@ -46,6 +46,23 @@ ClapTrap::ClapTrap(const ClapTrap &copy)
 	Armor_damage_reduction = copy.Armor_damage_reduction;
 }
 
+ClapTrap &ClapTrap::operator=(ClapTrap const &copy)
+{
+	if (this != &copy)
+	{
+		Name = copy.Name;
+		Hit_points = copy.Hit_points;
+		Max_hit_points = copy.Max_hit_points;
+		Energy_points = copy.Energy_points;
+		Max_energy_points = copy.Max_energy_points;
+		Level = copy.Level;
+		Melee_attack_damage = copy.Melee_attack_damage;
+		Ranged_attack_damage = copy.Ranged_attack_damage;
+		Armor_damage_reduction = copy.Armor_damage_reduction;
+	}
+	return (*this);
+}
+
 void	ClapTrap::takeDamage(unsigned int amount)
 {
 	if (amount > this->Armor_damage_reduction)
@@ -90,7 +107,7 @@ std::string	ClapTrap::getName(void) const
 	return (this->Name);
 }
 
-int	ClapTrap::get(std::string attack)
+unsigned int	ClapTrap::get(std::string attack)
 {
 	if (attack == "Melee")
 		return (this->Melee_attack_damage);
