@@ -17,8 +17,15 @@ TacticalMarine::TacticalMarine(void)
 	std::cout << "Tactical Marine ready for action !" << std::endl; 
 }
 
-TacticalMarine::TacticalMarine(const TacticalMarine &copy) {
+TacticalMarine::TacticalMarine(const TacticalMarine &copy)
+{
 	(void)copy;
+}
+
+TacticalMarine & TacticalMarine::operator=(const TacticalMarine &copy)
+{
+	(void)copy;
+	return (*this);
 }
 
 TacticalMarine::~TacticalMarine(void)

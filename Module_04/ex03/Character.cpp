@@ -28,6 +28,17 @@ Character::Character(const Character & copy)
 //	inventory = copy.inventory;
 }
 
+Character & Character::operator=(const Character & copy) 
+{
+	if (this != &copy)
+	{
+		Name = copy.Name;
+		number = copy.number;
+//		inventory = copy.inventory;
+	}
+	return (*this);
+}
+
 std::string const & Character::getName(void) const
 {
 	return (this->Name);

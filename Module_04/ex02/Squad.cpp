@@ -24,6 +24,16 @@ Squad::Squad(const Squad &copy)
 	Soldats = copy.Soldats;
 }
 
+Squad & Squad::operator=(const Squad &copy) 
+{
+	if (this != &copy)
+	{
+		Count = copy.Count;
+		Soldats = copy.Soldats;
+	}
+	return (*this);
+}
+
 Squad::~Squad(void)
 {
 	Marine *fri;

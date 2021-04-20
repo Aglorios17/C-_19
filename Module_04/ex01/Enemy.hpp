@@ -24,7 +24,8 @@ class Enemy
 		Enemy(void);
 		Enemy(int hp, std::string const & type);
 		Enemy(const Enemy &copy);
-		~Enemy(void);
+		Enemy &operator=(const Enemy & copy);
+		virtual ~Enemy(void);
 		std::string getType(void) const;
 		int getHP(void) const;
 		virtual void takeDamage(int damage);

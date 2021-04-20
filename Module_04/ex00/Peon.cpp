@@ -22,6 +22,13 @@ Peon::Peon(std::string name)
 
 Peon::Peon(const Peon &copy) : Victim(copy) {}
 
+Peon & Peon::operator=(const Peon & copy)
+{
+	if (this != &copy)
+		Name = copy.Name;
+	return (*this);
+}
+
 Peon::~Peon(void)
 {
 	std::cout << this->Name << " said : Bleuark..." << std::endl;

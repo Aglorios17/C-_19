@@ -25,6 +25,17 @@ Enemy::Enemy(const Enemy &copy)
 	HP = copy.HP;
 	Type = copy.Type;
 }
+
+Enemy & Enemy::operator=(const Enemy & copy)
+{
+	if (this != &copy)
+	{
+		HP = copy.HP;
+		Type = copy.Type;
+	}
+	return (*this);
+}
+
 Enemy::~Enemy(void) {}
 
 std::string Enemy::getType(void) const

@@ -22,6 +22,13 @@ Wolf::Wolf(std::string name)
 
 Wolf::Wolf(const Wolf &copy) : Victim(copy) {}
 
+Wolf & Wolf::operator=(const Wolf & copy)
+{
+	if (this != &copy)
+		Name = copy.Name;
+	return (*this);
+}
+
 Wolf::~Wolf(void)
 {
 	std::cout << this->Name << " said : argh..." << std::endl;

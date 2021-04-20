@@ -27,6 +27,16 @@ Sorcerer::Sorcerer(const Sorcerer &copy)
 	Title = copy.Title;
 }
 
+Sorcerer & Sorcerer::operator=(const Sorcerer & copy)
+{
+	if (this != &copy)
+	{
+		Name = copy.Name;
+		Title = copy.Title;
+	}
+	return (*this);
+}
+
 Sorcerer::~Sorcerer(void)
 {
 	std::cout << this->Name << ", " << this->Title << ", is dead. Consequences will never be the same !" << std::endl;

@@ -21,6 +21,7 @@ class TacticalMarine : public ISpaceMarine
 	public:
 		TacticalMarine(void);
 		TacticalMarine(const TacticalMarine &copy);
+		TacticalMarine &operator=(const TacticalMarine &copy);
 		virtual ~TacticalMarine(void);
 		ISpaceMarine *clone(void) const;
 		void battleCry(void) const;

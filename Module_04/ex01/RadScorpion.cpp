@@ -20,6 +20,13 @@ RadScorpion::RadScorpion(void) : Enemy(80, "Super Mutant")
 
 RadScorpion::RadScorpion(const RadScorpion &copy) : Enemy(copy) {}
 
+RadScorpion & RadScorpion::operator=(const RadScorpion & copy)
+{
+	if (this != &copy)
+		Enemy::operator=(copy);
+	return (*this);
+}
+
 RadScorpion::~RadScorpion(void) 
 {
 	std::cout << "* SPROTCH *" << std::endl;

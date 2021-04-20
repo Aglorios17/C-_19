@@ -14,7 +14,17 @@
 
 Cure::Cure(void) : AMateria("Cure") {}
 
-Cure::Cure(const Cure &copy) : AMateria(copy) {}
+Cure::Cure(const Cure &copy) : AMateria(copy)
+{
+	_xp = copy._xp;
+}
+
+Cure & Cure::operator=(const Cure &copy)
+{
+	if (this != &copy)
+		_xp = copy._xp;
+	return (*this);
+}
 
 Cure::~Cure(void) {}
 

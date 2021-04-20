@@ -28,6 +28,17 @@ AWeapon::AWeapon(const AWeapon &copy)
 	Damage = copy.Damage;
 }
 
+AWeapon & AWeapon::operator=(const AWeapon & copy)
+{
+	if (this != &copy)
+	{
+		Name = copy.Name;
+		AP = copy.AP;
+		Damage = copy.Damage;
+	}
+	return (*this);
+}
+
 AWeapon::~AWeapon() {}
 
 std::string	AWeapon::getName(void) const

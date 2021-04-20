@@ -17,6 +17,13 @@ PlasmaRifle::PlasmaRifle(void) : AWeapon("Plasma Rifle", 5, 21) {}
 
 PlasmaRifle::PlasmaRifle(const PlasmaRifle &copy) : AWeapon(copy) {}
 
+PlasmaRifle& PlasmaRifle::operator=(const PlasmaRifle & copy)
+{
+	if (this != &copy)
+		AWeapon::operator=(copy);
+	return (*this);
+}
+
 PlasmaRifle::~PlasmaRifle(void) {}
 
 void	PlasmaRifle::attack(void) const

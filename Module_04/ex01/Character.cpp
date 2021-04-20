@@ -31,6 +31,17 @@ Character::Character(const Character &copy)
 	return ;
 }
 
+Character & Character::operator=(const Character & copy)
+{
+	if (this != &copy)
+	{
+		Name = copy.Name;
+		AP = copy.AP;
+		weapon = copy.weapon;
+	}
+	return (*this);
+}
+
 Character::~Character(void) {}
 
 void Character::recoverAP(void)

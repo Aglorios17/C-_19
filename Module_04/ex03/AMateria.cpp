@@ -23,6 +23,16 @@ AMateria::AMateria(const AMateria & copy)
 	_xp = copy._xp;
 }
 
+AMateria & AMateria::operator=(const AMateria & copy) 
+{
+	if (this != &copy)
+	{
+		Type = copy.Type;
+		_xp = copy._xp;
+	}
+	return (*this);
+}
+
 AMateria::AMateria(std::string const & type) 
 {
 	Type = type;

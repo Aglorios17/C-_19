@@ -25,6 +25,16 @@ MateriaSource::MateriaSource(const MateriaSource & copy)
 	actual = copy.actual;
 }
 
+MateriaSource & MateriaSource::operator=(const MateriaSource & copy)
+{
+	if (this != &copy)
+	{
+//		inv = copy.inv;
+		actual = copy.actual;
+	}
+	return (*this);
+}
+
 MateriaSource::~MateriaSource(void)
 {	
 	int i = 0;

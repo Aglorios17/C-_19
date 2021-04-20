@@ -25,6 +25,13 @@ Victim::Victim(const Victim &copy)
 	Name = copy.Name;
 }
 
+Victim & Victim::operator=(const Victim & copy)
+{
+	if (this != &copy)
+		Name = copy.Name;
+	return (*this);
+}
+
 Victim::~Victim(void)
 {
 	std::cout << "The victim " << this->Name << " died for no apparent reasons!" << std::endl;

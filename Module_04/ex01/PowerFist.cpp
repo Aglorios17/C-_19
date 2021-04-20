@@ -17,6 +17,13 @@ PowerFist::PowerFist(void) : AWeapon("Power Fist", 50, 8) {}
 
 PowerFist::PowerFist(const PowerFist &copy) : AWeapon(copy) {}
 
+PowerFist & PowerFist::operator=(const PowerFist & copy)
+{
+	if (this != &copy)
+		AWeapon::operator=(copy);
+	return (*this);
+}
+
 PowerFist::~PowerFist(void) {}
 
 void	PowerFist::attack(void) const

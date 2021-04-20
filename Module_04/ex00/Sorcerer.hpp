@@ -25,6 +25,7 @@ class Sorcerer
 	public:
 		Sorcerer(std::string name, std::string Titre);
 		Sorcerer(const Sorcerer &copy);
+		Sorcerer &operator=(const Sorcerer & copy);
 		~Sorcerer(void);
 		void Polymorph(Victim const & copy) const;
 		std::string getName(void) const;

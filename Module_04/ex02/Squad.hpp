@@ -30,6 +30,7 @@ class Squad : public ISquad
 	public:
 		Squad(void);
 		Squad(const Squad &copy);
+		Squad &operator=(const Squad &copy);
 		virtual ~Squad(void);
 		int getCount(void) const;
 		ISpaceMarine *getUnit(int soldat) const;

@@ -20,6 +20,13 @@ SuperMutant::SuperMutant(void) : Enemy(170, "Super  Mutant")
 
 SuperMutant::SuperMutant(const SuperMutant &copy) : Enemy(copy) {}
 
+SuperMutant & SuperMutant::operator=(const SuperMutant & copy)
+{
+	if (this != &copy)
+		Enemy::operator=(copy);
+	return (*this);
+}
+
 SuperMutant::~SuperMutant(void) 
 {
 	std::cout << "Aaargh ..." << std::endl;

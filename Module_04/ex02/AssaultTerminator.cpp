@@ -17,8 +17,15 @@ AssaultTerminator::AssaultTerminator(void)
 	std::cout << "* teleports from space *" << std::endl; 
 }
 
-AssaultTerminator::AssaultTerminator(const AssaultTerminator &copy) {
+AssaultTerminator::AssaultTerminator(const AssaultTerminator &copy)
+{
 	(void)copy;
+}
+
+AssaultTerminator & AssaultTerminator::operator=(const AssaultTerminator & copy)
+{
+	(void)copy;
+	return (*this);
 }
 
 AssaultTerminator::~AssaultTerminator(void)

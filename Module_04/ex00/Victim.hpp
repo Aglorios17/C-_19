@@ -23,6 +23,7 @@ class Victim
 	public:
 		Victim(std::string Name);
 		Victim(const Victim &copy);
+		Victim &operator=(const Victim & copy);
 		virtual ~Victim(void);
 		virtual void getPolymorphed(void) const;
 		void intro(void) const;
