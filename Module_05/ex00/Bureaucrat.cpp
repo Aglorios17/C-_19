@@ -40,6 +40,16 @@ Bureaucrat::Bureaucrat(const Bureaucrat & copy)
 	Grade = copy.Grade;
 }
 
+Bureaucrat & Bureaucrat::operator=(const Bureaucrat & copy)
+{
+	if (this != &copy)
+	{
+		Name = copy.Name;
+		Grade = copy.Grade;
+	}
+	return (*this);
+}
+
 std::string Bureaucrat::getName(void)
 {
 	return (this->Name);
