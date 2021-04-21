@@ -63,6 +63,14 @@ void Bureaucrat::grade_down(void)
 	this->Grade += 1;
 }
 
+void signForm(const Form &form)
+{
+	if (form.getValidate)
+		std::cout << this->Name << " signs " << form.getForm() << std::endl;
+	else
+		std::cout << this->Name << " cant sign " << form.getForm() << " because the grade is invalid for this form."<< std::endl;
+}
+
 const char *Bureaucrat::GradeTooHighException::what(void) const throw()
 {
 	return ("Grade too high !");

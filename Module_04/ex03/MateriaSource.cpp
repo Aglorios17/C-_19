@@ -49,12 +49,8 @@ MateriaSource::~MateriaSource(void)
 
 void MateriaSource::learnMateria(AMateria *learn)
 {
-	int i = 0;
 	if (!learn || this->actual == 4)
 		return ;
-	while (i < this->actual)
-		if (this->inv[i++] == learn)
-			return ;
 	this->inv[this->actual++] = learn;
 }
 

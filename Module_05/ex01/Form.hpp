@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Bureaucrat.hpp                                     :+:      :+:    :+:   */
+/*   Form.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aglorios <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -10,27 +10,27 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef BUREAUCRAT_HPP
-# define BUREAUCRAT_HPP
+#ifndef FORM_HPP
+# define FORM_HPP
 
 # include <iostream>
 # include <stdexcept>
+# include "Bureaucrat.hpp"
 
-class Bureaucrat
+class Form
 {
 	private:
-		std::string Name;
-		int			Grade;
+		std::string Doc;
+		bool		Validate;
 	public:
-		Bureaucrat(void);
-		Bureaucrat(std::string name, int grade);
-		Bureaucrat(const Bureaucrat & copy);
-		Bureaucrat & operator=(const Bureaucrat & copy);
-		~Bureaucrat(void);
-		int	getGrade(void) const;
-		std::string getName(void) const;
-		void grade_up(void);
-		void grade_down(void);
+		Form(void);
+		Form(std::string Doc, const Bureaucrat &Agent);
+		Form(const Form & copy);
+		Form & operator=(const Form & copy);
+		~Form(void);
+		bool	getValidate(void) const;
+		std::string getForm(void) const;
+		int	beSigned(const Bureaucrat &Agent);
 		class GradeTooHighException : public std::exception
 		{
 			public:
@@ -43,6 +43,6 @@ class Bureaucrat
 		};
 };
 
-std::ostream & operator<<(std::ostream &o, const Bureaucrat &rhs);
+std::ostream & operator<<(std::ostream &o, const Form &rhs);
 
 #endif
