@@ -79,6 +79,17 @@ int	Form::getExecLevel(void) const
 	return (this->ExecLevel);
 }
 
+bool	Form::executeF(Bureaucrat const & executor) const
+{
+	if (executor.getGrade() > getExecLevel() || !getValidate())
+	{
+		std::cout << executor.getName() << " cant execute " << getForm() << " ";
+		throw(GradeTooLowException());
+		return (0);
+	}
+	return (1);
+}
+
 const char *Form::GradeTooHighException::what(void) const throw()
 {
 	return ("Grade too high for this form!");

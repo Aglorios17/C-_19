@@ -36,6 +36,7 @@ class Form
 		int		getAccesLevel(void) const;
 		int		getExecLevel(void) const;
 		void	beSigned(Bureaucrat &Agent);
+		bool	executeF(Bureaucrat const &executor) const;
 		class GradeTooHighException : public std::exception
 		{
 			public:

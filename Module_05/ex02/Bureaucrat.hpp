@@ -34,12 +34,18 @@ class Bureaucrat
 		void grade_up(void);
 		void grade_down(void);
 		void signForm(Form &form);
+		void executeForm(Form const & form);
 		class GradeTooHighException : public std::exception
 		{
 			public:
 				virtual const char *what(void) const throw();
 		};
 		class GradeTooLowException : public std::exception
+		{
+			public:
+				virtual const char *what(void) const throw();
+		};
+		class CannotExec : public std::exception
 		{
 			public:
 				virtual const char *what(void) const throw();
