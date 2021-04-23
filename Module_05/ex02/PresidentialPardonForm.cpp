@@ -6,7 +6,7 @@
 /*   By: aglorios <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/11 14:11:42 by aglorios          #+#    #+#             */
-/*   Updated: 2021/03/11 19:23:51 by aglorios         ###   ########.fr       */
+/*   Updated: 2021/04/23 11:38:15 by aglorios         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ PresidentialPardonForm & PresidentialPardonForm::operator=(const PresidentialPar
 {
 	Form::operator=(copy);
 	Target = copy.Target;
-	return (*this);
+	return (*this)
 }
 
 void	PresidentialPardonForm::execute(Bureaucrat const & executor) const

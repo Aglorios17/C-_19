@@ -6,7 +6,7 @@
 /*   By: aglorios <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/11 14:11:42 by aglorios          #+#    #+#             */
-/*   Updated: 2021/03/11 19:23:51 by aglorios         ###   ########.fr       */
+/*   Updated: 2021/04/23 11:38:21 by aglorios         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,9 +74,8 @@ void Bureaucrat::executeForm(const Form &form)
 {
 	try
 	{
-		form.executeF(*this);
-
 		std::cout << this->Name << " executs " << form.getForm() << std::endl;
+		form.execute(*this);
 	}
 	catch (std::exception &e)
 	{
