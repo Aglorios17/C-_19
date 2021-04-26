@@ -6,7 +6,7 @@
 /*   By: aglorios <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/23 17:02:50 by aglorios          #+#    #+#             */
-/*   Updated: 2021/04/26 14:14:32 by aglorios         ###   ########.fr       */
+/*   Updated: 2021/04/26 18:32:48 by aglorios         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,17 +51,21 @@ void Scalaire::Scal_int(void)
 }
 void Scalaire::Scal_char(void)
 {
+	std::string nb;
 	if (!isprint(this->Value[0]))
 	{
 		this->C = -1;
 		return ;
 	}
-	if (this->Value[1])
+	int i = 0;
+	while (isdigit(this->Value[i]))
+		nb += this->Value[i++];
+	if (this->Value[i] != '\0' && this->Value[i] != '.')
 	{
 		this->C = -2;
 		return ;
 	}
-	this->C = this->Value[0];
+	this->C = stoi(nb);
 }
 
 void Scalaire::Scal_float(void)
@@ -99,12 +103,14 @@ std::string Scalaire::get_int(void) const
 
 std::string Scalaire::get_char(void) const
 {
-	if (this->C == -1)
-		return ("Non displayable");
-	if (this->C == -2)
+	if (isalpha(this->Value[0]))
 		return ("Impossible");
+	if (!isprint(this->C))
+		return ("Non displayable");
 	std::string ret;
-	ret = '\'' + static_cast<char>(C) + '\'';
+	ret += "\'";
+	ret += this->C;
+	ret += "\'";
 	return(ret);
 }
 
@@ -112,14 +118,40 @@ std::string Scalaire::get_float(void) const
 {
 	if (this->F == -1)
 		return ("Impossible");
-	return(std::to_string(this->F));
+	std::string nb = std::to_string(this->F);
+	std::string ret;
+	int i = 0;
+	while (nb[i] && nb[i] != '.')
+	{
+		ret += nb[i];
+		i++;
+	}
+	if (nb[i] == '.' && nb[i + 1])
+	{
+		ret += '.';
+		ret += nb[i + 1];
+	}
+	return(ret + "f");
 }
 
 std::string Scalaire::get_double(void) const
 {
 	if (this->D == -1)
 		return ("Impossible");
-	return(std::to_string(this->D));
+	std::string nb = std::to_string(this->D);
+	std::string ret;
+	int i = 0;
+	while (nb[i] && nb[i] != '.')
+	{
+		ret += nb[i];
+		i++;
+	}
+	if (nb[i] == '.' && nb[i + 1])
+	{
+		ret += '.';
+		ret += nb[i + 1];
+	}
+	return(ret);
 }
 
 std::ostream &operator<<(std::ostream &o, Scalaire const &scalaire)

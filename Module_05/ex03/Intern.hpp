@@ -6,7 +6,7 @@
 /*   By: aglorios <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/11 14:11:42 by aglorios          #+#    #+#             */
-/*   Updated: 2021/04/23 14:21:52 by aglorios         ###   ########.fr       */
+/*   Updated: 2021/04/26 17:32:10 by aglorios         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ class Intern;
 # include "PresidentialPardonForm.hpp"
 # include "ShrubberyCreationForm.hpp"
 
-class Intern : public Form
+class Intern
 {
 	public:
 		Intern(void);
