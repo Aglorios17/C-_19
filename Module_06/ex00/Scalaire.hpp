@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Sclalaire.hpp                                      :+:      :+:    :+:   */
+/*   Scalaire.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aglorios <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/23 17:02:50 by aglorios          #+#    #+#             */
-/*   Updated: 2021/04/23 17:38:26 by aglorios         ###   ########.fr       */
+/*   Updated: 2021/04/26 14:14:20 by aglorios         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 class	Scalaire;
 # include <iostream>
+# include <string>
 
 class	Scalaire
 {
@@ -30,15 +31,15 @@ class	Scalaire
 		Scalaire(const Scalaire &copy);
 		Scalaire &operator=(const Scalaire &copy);
 		~Scalaire(void);
-		int Scal_int(void);
-		char Scal_char(void);
-		float Scal_float(void);
-		double Scal_double(void);
-		int get_int(void);
-		char get_char(void);
-		float get_float(void);
-		double get_double(void);	
-}
+		void Scal_int(void);
+		void Scal_char(void);
+		void Scal_float(void);
+		void Scal_double(void);
+		std::string get_int(void) const;
+		std::string get_char(void) const;
+		std::string get_float(void) const;
+		std::string get_double(void) const;	
+};
 
 std::ostream &operator<<(std::ostream &o, Scalaire const &scalaire);
 
