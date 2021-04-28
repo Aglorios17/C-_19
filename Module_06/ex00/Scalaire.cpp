@@ -6,7 +6,7 @@
 /*   By: aglorios <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/23 17:02:50 by aglorios          #+#    #+#             */
-/*   Updated: 2021/04/26 18:32:48 by aglorios         ###   ########.fr       */
+/*   Updated: 2021/04/28 15:47:41 by aglorios         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,18 +35,21 @@ Scalaire & Scalaire::operator=(const Scalaire &copy)
 	return (*this);
 }
 
-Scalaire::~Scalaire(void) {}
+Scalaire::~Scalaire(void) {return ;}
 
 void Scalaire::Scal_int(void)
 {
+	int i;
 	try{	
-		this->I = stoi(this->Value);
+		i = stoi(this->Value);
+		this->I = static_cast<int>(i);
 	}
 	catch(std::invalid_argument& e){
 		this->I = -1;
 	}
  	catch(std::out_of_range& e){
 		this->I = -1;
+		return ;
 	}
 }
 void Scalaire::Scal_char(void)
@@ -65,13 +68,17 @@ void Scalaire::Scal_char(void)
 		this->C = -2;
 		return ;
 	}
-	this->C = stoi(nb);
+	char c;
+	c = stoi(nb);
+	this->C = static_cast<char>(c);
 }
 
 void Scalaire::Scal_float(void)
 {
+	float f;
 	try{	
-		this->F = stof(this->Value);
+		f = stof(this->Value);
+		this->F = static_cast<float>(f);
 	}
 	catch(std::invalid_argument& e){
 		this->F = -1;
@@ -83,8 +90,10 @@ void Scalaire::Scal_float(void)
 
 void Scalaire::Scal_double(void)
 {
+	double d;
 	try{	
-		this->D = stod(this->Value);
+		d = stod(this->Value);
+		this->D = static_cast<double>(d);
 	}
 	catch(std::invalid_argument& e){
 		this->D = -1;
@@ -96,29 +105,66 @@ void Scalaire::Scal_double(void)
 
 std::string Scalaire::get_int(void) const
 {
-	if (this->I == -1)
-		return ("Impossible");
-	return(std::to_string(this->I));
+	std::string nb;
+	if (!isdigit(this->Value[0]) && !this->Value[1])
+	{
+		int i = static_cast<int>(this->Value[0]);
+		if (isalpha(this->Value[0]) && isalpha(this->Value[1]))
+			return ("Impossible");
+		nb = std::to_string(i);
+	}
+	else
+	{
+		if (this->I == -1)
+			return ("Impossible");
+		nb = std::to_string(this->I);
+	}
+	return(nb);
 }
 
 std::string Scalaire::get_char(void) const
 {
-	if (isalpha(this->Value[0]))
-		return ("Impossible");
-	if (!isprint(this->C))
-		return ("Non displayable");
 	std::string ret;
-	ret += "\'";
-	ret += this->C;
-	ret += "\'";
+	if (!isdigit(this->Value[0]))
+	{
+		char c = static_cast<char>(this->Value[0]);
+		if (isalpha(this->Value[0]) && isalpha(this->Value[1]))
+			return ("Impossible");
+		if (!isprint(c))
+			return ("Non displayable");
+		ret += "\'";
+		ret += c;
+		ret += "\'";
+	}
+	else
+	{
+		if (isalpha(this->Value[0]))
+			return ("Impossible");
+		if (!isprint(this->C))
+			return ("Non displayable");
+		ret += "\'";
+		ret += this->C;
+		ret += "\'";
+	}
 	return(ret);
 }
 
 std::string Scalaire::get_float(void) const
 {
-	if (this->F == -1)
-		return ("Impossible");
-	std::string nb = std::to_string(this->F);
+	std::string nb;
+	if (!isdigit(this->Value[0]) && !this->Value[1])
+	{
+		float f = static_cast<float>(this->Value[0]);
+		if (isalpha(this->Value[0]) && isalpha(this->Value[1]))
+			return ("Impossible");
+		nb = std::to_string(f);
+	}
+	else
+	{
+		if (this->F == -1)
+			return ("Impossible");
+		nb = std::to_string(this->F);
+	}
 	std::string ret;
 	int i = 0;
 	while (nb[i] && nb[i] != '.')
@@ -136,9 +182,20 @@ std::string Scalaire::get_float(void) const
 
 std::string Scalaire::get_double(void) const
 {
-	if (this->D == -1)
-		return ("Impossible");
-	std::string nb = std::to_string(this->D);
+	std::string nb;
+	if (!isdigit(this->Value[0]) && !this->Value[1])
+	{
+		double d = static_cast<double>(this->Value[0]);
+		if (isalpha(this->Value[0]) && isalpha(this->Value[1]))
+			return ("Impossible");
+		nb = std::to_string(d);
+	}
+	else
+	{
+		if (this->D == -1)
+			return ("Impossible");
+		nb = std::to_string(this->D);
+	}
 	std::string ret;
 	int i = 0;
 	while (nb[i] && nb[i] != '.')

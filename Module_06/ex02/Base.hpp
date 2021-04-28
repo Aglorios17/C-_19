@@ -1,39 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Serializer.hpp                                     :+:      :+:    :+:   */
+/*   A.hpp                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aglorios <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/26 14:17:41 by aglorios          #+#    #+#             */
-/*   Updated: 2021/04/28 16:02:33 by aglorios         ###   ########.fr       */
+/*   Updated: 2021/04/28 16:04:22 by aglorios         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SERIALIZER_HPP
-# define SERIALIZER_HPP
+#ifndef A_HPP
+# define A_HPP
 
-class Serializer;
+class A;
 
 # include <iostream>
 
-typedef struct	Data
-{
-	std::string	s1;
-	std::string	s2;
-	int 		n;
-}				Data;
-
-class	Serializer
+class	A
 {
 	public:
-		Serializer(void);
-		Serializer(const Serializer &copy);
-		Serializer &operator=(const Serializer &copy);
-		~Serializer(void);
-		void * 	serialize(void);
-		Data * 	deserialize(void * raw);
-		std::string	stringCreate(void);
+		A(void);
+		A(const A &copy);
+		A &operator=(const A &copy);
+		~A(void);
 };
 
 #endif

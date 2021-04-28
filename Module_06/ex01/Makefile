@@ -6,7 +6,7 @@
 #    By: aglorios <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/04/26 13:56:41 by aglorios          #+#    #+#              #
-#    Updated: 2021/04/26 14:10:36 by aglorios         ###   ########.fr        #
+#    Updated: 2021/04/28 15:46:25 by aglorios         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,10 +16,9 @@ CFLAGS = -Wall -Wextra -Werror
 
 RM = rm -rf
 
-NAME = convert
+NAME = Serializer
 
-SRC =  convert.cpp \
-	   Scalaire.cpp
+SRC =  Serializer.cpp
 
 HEADER = ./
 
