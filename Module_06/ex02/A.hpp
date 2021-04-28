@@ -1,29 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Base.hpp                                           :+:      :+:    :+:   */
+/*   A.hpp                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aglorios <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/26 14:17:41 by aglorios          #+#    #+#             */
-/*   Updated: 2021/04/28 16:03:44 by aglorios         ###   ########.fr       */
+/*   Updated: 2021/04/28 18:05:54 by aglorios         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef BASE_HPP
-# define BASE_HPP
+#ifndef A_HPP
+# define A_HPP
 
-class Base;
+class A;
 
 # include <iostream>
+# include "Base.hpp"
 
-class	Base
+class	A : public Base
 {
 	public:
-		Base(void);
-		Base(const Base &copy);
-		Base &operator=(const Base &copy);
-		~Base(void);
+		A(void);
+		A(const A &copy);
+		A &operator=(const A &copy);
+		~A(void);
 };
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: aglorios <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/26 14:17:41 by aglorios          #+#    #+#             */
-/*   Updated: 2021/04/28 16:02:33 by aglorios         ###   ########.fr       */
+/*   Updated: 2021/04/28 18:51:36 by aglorios         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,6 @@ class	Serializer
 		~Serializer(void);
 		void * 	serialize(void);
 		Data * 	deserialize(void * raw);
-		std::string	stringCreate(void);
 };
 
 #endif

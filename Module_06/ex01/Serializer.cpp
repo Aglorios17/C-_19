@@ -6,7 +6,7 @@
 /*   By: aglorios <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/26 14:15:30 by aglorios          #+#    #+#             */
-/*   Updated: 2021/04/28 16:01:16 by aglorios         ###   ########.fr       */
+/*   Updated: 2021/04/28 19:05:00 by aglorios         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,23 +38,17 @@ Serializer::~Serializer(void)
 	std::cout << "free done" << std::endl;
 }
 
-std::string Serializer::stringCreate(void)
-{
-	int i = 0;
-	static char str[9];
-
-	while (i < 8)
-		str[i++] = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"[rand() % 62];
-	return (static_cast<std::string>(str));
-}
-
 void * Serializer::serialize(void) 
 {
-	srand(time(NULL));
+	int i = 0;
+	static char charact[63] = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
 	Data *raw = new Data;
 
-	raw->s1 = stringCreate(); 
-	raw->s2 = stringCreate(); 
+	while (i++ < 8)
+	{
+		raw->s1 += charact[rand() % 62];
+		raw->s2 += charact[rand() % 62];
+	}
 	raw->n = rand();
 	return (static_cast<void *>(raw));
 }
@@ -66,6 +60,9 @@ Data * Serializer::deserialize(void * raw)
 
 int main ()
 {
+	srand(time(NULL));
 	Serializer Test;
+	std::cout << std::endl;
+	Serializer Test2;
 	return (0);
 }

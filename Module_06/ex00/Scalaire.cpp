@@ -6,7 +6,7 @@
 /*   By: aglorios <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/23 17:02:50 by aglorios          #+#    #+#             */
-/*   Updated: 2021/04/28 15:47:41 by aglorios         ###   ########.fr       */
+/*   Updated: 2021/04/28 18:00:33 by aglorios         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,6 +78,7 @@ void Scalaire::Scal_float(void)
 	float f;
 	try{	
 		f = stof(this->Value);
+		std::cout << "ICI : " << f << std::endl;
 		this->F = static_cast<float>(f);
 	}
 	catch(std::invalid_argument& e){

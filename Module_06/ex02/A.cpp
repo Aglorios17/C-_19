@@ -1,30 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   C.hpp                                              :+:      :+:    :+:   */
+/*   A.cpp                                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aglorios <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/04/26 14:17:41 by aglorios          #+#    #+#             */
-/*   Updated: 2021/04/28 18:13:11 by aglorios         ###   ########.fr       */
+/*   Updated: 2021/04/28 18:25:43 by aglorios         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef C_HPP
-# define C_HPP
+#include "A.hpp"
 
-class C;
+A::A(void) {}
 
-# include <iostream>
-# include "Base.hpp"
+A::A(const A &copy) {(void)copy;}
 
-class	C : public Base
+A &	A::operator=(const A &copy)
 {
-	public:
-		C(void);
-		C(const C &copy);
-		C &operator=(const C &copy);
-		~C(void);
-};
+	(void)copy;
+	return (*this);
+}
 
-#endif
+A::~A(void) 
+{
+	std::cout << "A delete" << std::endl;
+}
