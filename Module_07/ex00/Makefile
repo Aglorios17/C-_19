@@ -6,7 +6,7 @@
 #    By: aglorios <marvin@42.fr>                    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/04/26 13:56:41 by aglorios          #+#    #+#              #
-#    Updated: 2021/04/28 15:47:51 by aglorios         ###   ########.fr        #
+#    Updated: 2021/04/29 12:15:34 by aglorios         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,10 +16,9 @@ CFLAGS = -Wall -Wextra -Werror
 
 RM = rm -rf
 
-NAME = convert
+NAME = main
 
-SRC =  Scalaire.cpp \
-	   convert.cpp
+SRC =  main.cpp 
 
 HEADER = ./
 
