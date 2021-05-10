@@ -16,13 +16,14 @@ Victim::Victim(void){}
 
 Victim::Victim(std::string name)
 {
-	std::cout << "A random victim called " << name << " just appeared!" << std::endl;
+	std::cout << "Some random victim called " << name << " just appeared!" << std::endl;
 	this->Name = name;
 }
 
 Victim::Victim(const Victim &copy)
 {
 	Name = copy.Name;
+	std::cout << "Some random victim called " << Name << " just appeared!" << std::endl;
 }
 
 Victim & Victim::operator=(const Victim & copy)
@@ -34,7 +35,7 @@ Victim & Victim::operator=(const Victim & copy)
 
 Victim::~Victim(void)
 {
-	std::cout << "The victim " << this->Name << " died for no apparent reasons!" << std::endl;
+	std::cout << "Victim " << this->Name << " died for no apparent reasons!" << std::endl;
 }
 
 void	Victim::intro(void) const
@@ -50,5 +51,5 @@ std::ostream & operator<<(std::ostream & o, Victim const & copy)
 
 void	Victim::getPolymorphed(void) const
 {
-	std::cout << this->Name << " was just polymorphed in a cute little sheep!" << std::endl;
+	std::cout << this->Name << " has been turned in a cute little sheep!" << std::endl;
 }

@@ -17,6 +17,8 @@
 
 int main()
 {
+	std::cout << "|||||||||||||||||     main test       ||||||||\n" << std::endl;
+
 	Sorcerer robert("Robert", "the Magnificent");
 
 	Victim jim("Jimmy");
@@ -27,5 +29,11 @@ int main()
 	robert.Polymorph(jim);
 	robert.Polymorph(joe);
 
+	std::cout << "|||||||||||||||   add test     ||||||||||||| \n" << std::endl;
+
+	Wolf Me("Alessio");
+	std::cout << Me;
+	robert.Polymorph(Me);
+	
 	return 0;
 }

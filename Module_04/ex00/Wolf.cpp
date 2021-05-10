@@ -17,10 +17,13 @@ Wolf::Wolf(void) {}
 Wolf::Wolf(std::string name)
 {
 	this->Name = name;
-	std::cout << this->Name << " said : rrrh I'm an aplha" << std::endl;
+	std::cout << "Rrrh I'm an aplha" << std::endl;
 }
 
-Wolf::Wolf(const Wolf &copy) : Victim(copy) {}
+Wolf::Wolf(const Wolf &copy) : Victim(copy)
+{
+	std::cout << "Rrrh I'm an aplha" << std::endl;
+}
 
 Wolf & Wolf::operator=(const Wolf & copy)
 {
@@ -31,10 +34,10 @@ Wolf & Wolf::operator=(const Wolf & copy)
 
 Wolf::~Wolf(void)
 {
-	std::cout << this->Name << " said : argh..." << std::endl;
+	std::cout << "Aargh..." << std::endl;
 }
 
 void	Wolf::getPolymorphed(void) const
 {
-	std::cout << this->Name << " was just polymorphed into a Chiwawa!" << std::endl;
+	std::cout << this->Name << " has been turned into a Chiwawa!" << std::endl;
 }

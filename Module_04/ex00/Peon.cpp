@@ -12,15 +12,16 @@
 
 #include "Peon.hpp"
 
-Peon::Peon(void) {}
-
 Peon::Peon(std::string name)
 {
 	this->Name = name;
-	std::cout << this->Name << " said : Zog zog" << std::endl;
+	std::cout << "Zog zog." << std::endl;
 }
 
-Peon::Peon(const Peon &copy) : Victim(copy) {}
+Peon::Peon(const Peon &copy) : Victim(copy) 
+{
+	std::cout << "Zog zog." << std::endl;
+}
 
 Peon & Peon::operator=(const Peon & copy)
 {
@@ -31,10 +32,10 @@ Peon & Peon::operator=(const Peon & copy)
 
 Peon::~Peon(void)
 {
-	std::cout << this->Name << " said : Bleuark..." << std::endl;
+	std::cout << "Bleuark..." << std::endl;
 }
 
 void	Peon::getPolymorphed(void) const
 {
-	std::cout << this->Name << " was just polymorphed into a pink pony!" << std::endl;
+	std::cout << this->Name << " has been turned into a pink pony!" << std::endl;
 }

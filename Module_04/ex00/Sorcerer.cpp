@@ -25,6 +25,7 @@ Sorcerer::Sorcerer(const Sorcerer &copy)
 {
 	Name = copy.Name;
 	Title = copy.Title;
+	std::cout << Name << ", " << Title << ", is born !" << std::endl;
 }
 
 Sorcerer & Sorcerer::operator=(const Sorcerer & copy)
@@ -52,8 +53,13 @@ std::string	Sorcerer::getName(void) const
 	return (this->Name);
 }
 
+std::string	Sorcerer::getTitle(void) const
+{
+	return (this->Title);
+}
+
 std::ostream & operator<<(std::ostream & o, Sorcerer const & copy)
 {
-	o << "I am " << copy.getName() << " and i like otters!" << std::endl;
+	o << "I am " << copy.getName() << ", " << copy.getTitle() << " and I like ponies!" << std::endl;
 	return (o);
 }

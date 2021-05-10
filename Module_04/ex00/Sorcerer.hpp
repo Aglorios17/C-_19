@@ -29,6 +29,7 @@ class Sorcerer
 		~Sorcerer(void);
 		void Polymorph(Victim const & copy) const;
 		std::string getName(void) const;
+		std::string getTitle(void) const;
 };
 
 std::ostream & operator<<(std::ostream & o, Sorcerer const & copy);

@@ -19,7 +19,7 @@
 class Peon : public Victim
 {
 	public:
-		Peon(void);
+		Peon(void) {}
 		Peon(std::string name);
 		Peon(const Peon &copy);
 		Peon &operator=(const Peon & copy);
