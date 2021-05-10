@@ -6,7 +6,7 @@
 /*   By: aglorios <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/11 14:11:42 by aglorios          #+#    #+#             */
-/*   Updated: 2021/05/10 12:26:00 by aglorios         ###   ########.fr       */
+/*   Updated: 2021/05/10 15:54:05 by aglorios         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ Victim::~Victim(void)
 
 void	Victim::intro(void) const
 {
-	std::cout << "I am " << this->Name << " and i like otters!" << std::endl;
+	std::cout << "I'm " << this->Name << " and i like otters!" << std::endl;
 }
 
 std::ostream & operator<<(std::ostream & o, Victim const & copy)

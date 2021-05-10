@@ -6,7 +6,7 @@
 /*   By: aglorios <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/11 14:11:42 by aglorios          #+#    #+#             */
-/*   Updated: 2021/03/11 19:23:51 by aglorios         ###   ########.fr       */
+/*   Updated: 2021/05/10 16:00:14 by aglorios         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,6 @@ Character::Character(const Character & copy)
 {
 	Name = copy.Name;
 	number = copy.number;
-//	inventory = copy.inventory;
 }
 
 Character & Character::operator=(const Character & copy) 

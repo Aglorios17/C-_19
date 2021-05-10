@@ -6,7 +6,7 @@
 /*   By: aglorios <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/11 14:11:42 by aglorios          #+#    #+#             */
-/*   Updated: 2021/05/10 14:27:13 by aglorios         ###   ########.fr       */
+/*   Updated: 2021/05/10 15:56:09 by aglorios         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,7 +64,7 @@ void Character::attack(Enemy *enemy)
 	if (this->AP < this->weapon->getAPCost())
 		return ;
 	this->AP -= this->weapon->getAPCost();
-	std::cout << this->Name << " attack " << enemy->getType()
+	std::cout << this->Name << " attacks " << enemy->getType()
 			<< " with a " << this->weapon->getName() << std::endl;
 	this->weapon->attack();
 	enemy->takeDamage(this->weapon->getDamage());

@@ -6,7 +6,7 @@
 /*   By: aglorios <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/11 14:11:42 by aglorios          #+#    #+#             */
-/*   Updated: 2021/05/10 14:48:18 by aglorios         ###   ########.fr       */
+/*   Updated: 2021/05/10 15:55:21 by aglorios         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@
 int main()
 {
 	std::cout << "START" << std::endl;
-	Character* moi = new Character("moi");
+	Character* moi = new Character("me");
 
 	std::cout << *moi;
 
@@ -58,9 +58,6 @@ int main()
 	moi->attack(wolf);
 	std::cout << *moi;
 
-//	delete Saber;
-//	delete wolf;
-//	delete b;
 	delete pf;
 	delete pr;
 	delete moi;

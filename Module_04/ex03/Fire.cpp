@@ -1,41 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
+/*   Fire.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aglorios <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/11 14:11:42 by aglorios          #+#    #+#             */
-/*   Updated: 2021/05/10 15:53:17 by aglorios         ###   ########.fr       */
+/*   Updated: 2021/05/10 16:02:56 by aglorios         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Sorcerer.hpp"
-#include "Victim.hpp"
-#include "Peon.hpp"
-#include "Wolf.hpp"
+#include "Fire.hpp"
 
-int main()
+Fire::Fire(void) : AMateria("Fire") {}
+
+Fire::Fire(const Fire &copy) : AMateria(copy)
 {
-	{
-		std::cout << "|||||||||||||||||     main test       ||||||||\n" << std::endl;
+	_xp = copy._xp;
+}
 
-		Sorcerer robert("Robert", "the Magnificent");
-	
-		Victim jim("Jimmy");
-		Peon joe("Joe");
-	
-		std::cout << robert << jim << joe;
-	
-		robert.Polymorph(jim);
-		robert.Polymorph(joe);
-	}
-	std::cout << "\n|||||||||||||||   add test     ||||||||||||| \n" << std::endl;
-	Sorcerer Elias("Elias", "the Men");
+Fire & Fire::operator=(const Fire &copy)
+{
+	if (this != &copy)
+		_xp = copy._xp;
+	return (*this);
+}
 
-	Wolf Me("Alessio");
-	std::cout << Me;
-	Elias.Polymorph(Me);
-	
-	return 0;
+Fire::~Fire(void) {}
+
+AMateria* Fire::clone(void) const
+{
+	return (new Fire(*this));
+}
+
+void Fire::use(ICharacter& target)
+{
+	std::cout << "* shoots an fire ball at " << target.getName() << " *" << std::endl;
+	AMateria::use(target);
 }
