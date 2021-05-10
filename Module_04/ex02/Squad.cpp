@@ -6,7 +6,7 @@
 /*   By: aglorios <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/11 14:11:42 by aglorios          #+#    #+#             */
-/*   Updated: 2021/03/11 19:23:51 by aglorios         ###   ########.fr       */
+/*   Updated: 2021/05/10 15:09:43 by aglorios         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,13 +73,16 @@ int Squad::getCount(void) const
 ISpaceMarine *Squad::getUnit(int soldat) const
 {
 	Marine *list;
+	int		i = -1;
 
 	list = NULL;
 	if (soldat >= this->Count)
 		return (NULL);
 	list = Soldats;
-	while (soldat-- > 0 && list && list->next)
+	while (++i < soldat && list && list->next)
 		list = list->next;
+	if (!list)
+			return (NULL);
 	return (list->value);
 }
 
@@ -105,7 +108,7 @@ int	Squad::push(ISpaceMarine *soldat)
 		Marine *add = new Marine;
 		add->value = soldat;
 		add->next = NULL;
-		Soldats = add;
+		Soldats->next = add;
 	}
 	Count += 1;
 	return (Count);

@@ -6,14 +6,12 @@
 /*   By: aglorios <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/11 14:11:42 by aglorios          #+#    #+#             */
-/*   Updated: 2021/03/11 19:23:51 by aglorios         ###   ########.fr       */
+/*   Updated: 2021/05/10 14:27:13 by aglorios         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 # include "Character.hpp"
 # include "Enemy.hpp"
-
-Character::Character(void) {}	
 
 Character::Character(std::string const & name)
 {
@@ -42,7 +40,11 @@ Character & Character::operator=(const Character & copy)
 	return (*this);
 }
 
-Character::~Character(void) {}
+Character::~Character(void) 
+{
+	delete weapon;
+	weapon = 0;
+}
 
 void Character::recoverAP(void)
 {

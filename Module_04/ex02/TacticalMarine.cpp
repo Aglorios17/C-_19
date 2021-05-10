@@ -6,7 +6,7 @@
 /*   By: aglorios <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/11 14:11:42 by aglorios          #+#    #+#             */
-/*   Updated: 2021/03/11 19:23:51 by aglorios         ###   ########.fr       */
+/*   Updated: 2021/05/10 13:37:04 by aglorios         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ TacticalMarine::TacticalMarine(void)
 TacticalMarine::TacticalMarine(const TacticalMarine &copy)
 {
 	*this = copy;
+	std::cout << "Tactical Marine ready for action !" << std::endl; 
 }
 
 TacticalMarine & TacticalMarine::operator=(const TacticalMarine &copy)

@@ -1,31 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   PowerFist.cpp                                      :+:      :+:    :+:   */
+/*   LightSaber.hpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aglorios <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/11 14:11:42 by aglorios          #+#    #+#             */
-/*   Updated: 2021/05/10 14:22:58 by aglorios         ###   ########.fr       */
+/*   Updated: 2021/05/10 14:38:19 by aglorios         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "PowerFist.hpp"
+#ifndef LIGHTSABER_HPP
+# define LIGHTSABER_HPP
 
-PowerFist::PowerFist(void) : AWeapon("Power Fist", 8, 50) {}
+# include <iostream>
+# include "AWeapon.hpp"
 
-PowerFist::PowerFist(const PowerFist &copy) : AWeapon(copy) {*this = copy;}
-
-PowerFist & PowerFist::operator=(const PowerFist & copy)
+class LightSaber : public AWeapon
 {
-	if (this != &copy)
-		AWeapon::operator=(copy);
-	return (*this);
-}
+	public:
+		LightSaber(void);
+		LightSaber(const LightSaber &copy);
+		LightSaber &operator=(const LightSaber & copy);
+		virtual ~LightSaber(void);
+		virtual void attack(void) const;
+};
 
-PowerFist::~PowerFist(void) {}
-
-void	PowerFist::attack(void) const
-{
-	std::cout << "* pschhh... SBAM ! *" << std::endl;
-}
+#endif

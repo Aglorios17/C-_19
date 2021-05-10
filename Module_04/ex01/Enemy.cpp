@@ -6,13 +6,11 @@
 /*   By: aglorios <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/11 14:11:42 by aglorios          #+#    #+#             */
-/*   Updated: 2021/03/11 19:23:51 by aglorios         ###   ########.fr       */
+/*   Updated: 2021/05/10 14:41:53 by aglorios         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 # include "Enemy.hpp"
-
-Enemy::Enemy(void) {}
 
 Enemy::Enemy(int hp, std::string const & type)
 {
@@ -50,9 +48,14 @@ int Enemy::getHP() const
 
 void Enemy::takeDamage(int damage)
 {
-	if (this->HP > damage)
+	if (this->HP >= damage)
 		this->HP -= damage;
 	else
 		this->HP = 0;
-	std::cout << this->Type << " a maintenant " << this->HP << " points de vie !" << std::endl;	
+}
+
+std::ostream &operator<<(std::ostream &o, Enemy const& rhs)
+{
+	o << rhs.getType() << " has " << rhs.getHP() << " hp";
+	return (o);
 }

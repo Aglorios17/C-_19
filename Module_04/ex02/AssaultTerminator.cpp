@@ -6,7 +6,7 @@
 /*   By: aglorios <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/11 14:11:42 by aglorios          #+#    #+#             */
-/*   Updated: 2021/03/11 19:23:51 by aglorios         ###   ########.fr       */
+/*   Updated: 2021/05/10 13:33:57 by aglorios         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ AssaultTerminator::AssaultTerminator(void)
 AssaultTerminator::AssaultTerminator(const AssaultTerminator &copy)
 {
 	(void)copy;
+	std::cout << "* teleports from space *" << std::endl; 
 }
 
 AssaultTerminator & AssaultTerminator::operator=(const AssaultTerminator & copy)

@@ -6,16 +6,15 @@
 /*   By: aglorios <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/11 14:11:42 by aglorios          #+#    #+#             */
-/*   Updated: 2021/03/11 19:23:51 by aglorios         ###   ########.fr       */
+/*   Updated: 2021/05/10 14:07:15 by aglorios         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "AWeapon.hpp"
 # include "PlasmaRifle.hpp"
 
 PlasmaRifle::PlasmaRifle(void) : AWeapon("Plasma Rifle", 5, 21) {}
 
-PlasmaRifle::PlasmaRifle(const PlasmaRifle &copy) : AWeapon(copy) {}
+PlasmaRifle::PlasmaRifle(const PlasmaRifle &copy) : AWeapon(copy) {*this = copy;}
 
 PlasmaRifle& PlasmaRifle::operator=(const PlasmaRifle & copy)
 {

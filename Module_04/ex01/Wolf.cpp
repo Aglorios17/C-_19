@@ -1,31 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   PowerFist.cpp                                      :+:      :+:    :+:   */
+/*   Wolf.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aglorios <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/11 14:11:42 by aglorios          #+#    #+#             */
-/*   Updated: 2021/05/10 14:22:58 by aglorios         ###   ########.fr       */
+/*   Updated: 2021/05/10 14:43:33 by aglorios         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-# include "PowerFist.hpp"
+# include "Wolf.hpp"
 
-PowerFist::PowerFist(void) : AWeapon("Power Fist", 8, 50) {}
+Wolf::Wolf(void) : Enemy(100, "Wolf") 
+{
+	std::cout << "* RRRRRRRRHHHH rrrrrrrrrhhhh RRRRRHHH *" << std::endl;
+}
 
-PowerFist::PowerFist(const PowerFist &copy) : AWeapon(copy) {*this = copy;}
+Wolf::Wolf(const Wolf &copy) : Enemy(copy) 
+{
+	std::cout << "* RRRRRRRRHHHH rrrrrrrrrhhhh RRRRRHHH *" << std::endl;
+	*this = copy;
+}
 
-PowerFist & PowerFist::operator=(const PowerFist & copy)
+Wolf & Wolf::operator=(const Wolf & copy)
 {
 	if (this != &copy)
-		AWeapon::operator=(copy);
+		Enemy::operator=(copy);
 	return (*this);
 }
 
-PowerFist::~PowerFist(void) {}
-
-void	PowerFist::attack(void) const
+Wolf::~Wolf(void) 
 {
-	std::cout << "* pschhh... SBAM ! *" << std::endl;
+	std::cout << "* AHHHHOOOUuuu *" << std::endl;
 }

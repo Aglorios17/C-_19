@@ -6,7 +6,7 @@
 /*   By: aglorios <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/11 14:11:42 by aglorios          #+#    #+#             */
-/*   Updated: 2021/03/11 19:23:51 by aglorios         ###   ########.fr       */
+/*   Updated: 2021/05/10 13:34:46 by aglorios         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,9 +32,9 @@ class Squad : public ISquad
 		Squad(const Squad &copy);
 		Squad &operator=(const Squad &copy);
 		virtual ~Squad(void);
-		int getCount(void) const;
-		ISpaceMarine *getUnit(int soldat) const;
-		int	push(ISpaceMarine *soldat);
+		virtual int getCount(void) const;
+		virtual ISpaceMarine *getUnit(int soldat) const;
+		virtual int	push(ISpaceMarine *soldat);
 		void deepCopy(const Squad &copy);
 };
 

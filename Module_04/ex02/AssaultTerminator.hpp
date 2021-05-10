@@ -6,7 +6,7 @@
 /*   By: aglorios <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/11 14:11:42 by aglorios          #+#    #+#             */
-/*   Updated: 2021/03/11 19:23:51 by aglorios         ###   ########.fr       */
+/*   Updated: 2021/05/10 13:33:20 by aglorios         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,10 +23,10 @@ class AssaultTerminator : public ISpaceMarine
 		AssaultTerminator(const AssaultTerminator &copy);
 		AssaultTerminator &operator=(const AssaultTerminator &copy);
 		virtual ~AssaultTerminator(void);
-		ISpaceMarine *clone(void) const;
-		void battleCry(void) const;
-		void rangedAttack(void) const;
-		void meleeAttack(void) const;
+		virtual ISpaceMarine *clone(void) const;
+		virtual void battleCry(void) const;
+		virtual void rangedAttack(void) const;
+		virtual void meleeAttack(void) const;
 };
 
 #endif

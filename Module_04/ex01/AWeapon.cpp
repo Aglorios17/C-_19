@@ -6,7 +6,7 @@
 /*   By: aglorios <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/11 14:11:42 by aglorios          #+#    #+#             */
-/*   Updated: 2021/03/11 19:23:51 by aglorios         ###   ########.fr       */
+/*   Updated: 2021/05/10 14:48:48 by aglorios         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,6 +54,12 @@ int			AWeapon::getAPCost(void) const
 int 		AWeapon::getDamage(void) const
 {
 	return (this->Damage);
+}
+
+std::ostream &operator<<(std::ostream &o, AWeapon const& rhs)
+{
+	o << rhs.getName();
+	return (o);
 }
 
 //void 		AWeaponattack(void) const = 0

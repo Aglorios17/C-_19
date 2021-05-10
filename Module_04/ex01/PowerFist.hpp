@@ -6,7 +6,7 @@
 /*   By: aglorios <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/11 14:11:42 by aglorios          #+#    #+#             */
-/*   Updated: 2021/03/11 19:23:51 by aglorios         ###   ########.fr       */
+/*   Updated: 2021/05/10 14:19:43 by aglorios         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ class PowerFist : public AWeapon
 		PowerFist(const PowerFist &copy);
 		PowerFist &operator=(const PowerFist & copy);
 		virtual ~PowerFist(void);
-		void attack(void) const;
+		virtual void attack(void) const;
 };
 
 #endif

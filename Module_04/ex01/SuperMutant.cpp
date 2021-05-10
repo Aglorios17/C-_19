@@ -6,19 +6,21 @@
 /*   By: aglorios <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/11 14:11:42 by aglorios          #+#    #+#             */
-/*   Updated: 2021/03/11 19:23:51 by aglorios         ###   ########.fr       */
+/*   Updated: 2021/05/10 14:08:02 by aglorios         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 # include "SuperMutant.hpp"
-# include "Enemy.hpp"
 
 SuperMutant::SuperMutant(void) : Enemy(170, "Super  Mutant") 
 {
-	std::cout << "Gaaah. Break everything !" << std::endl;
+	std::cout << "Gaaah. Me want smash heads!" << std::endl;
 }
 
-SuperMutant::SuperMutant(const SuperMutant &copy) : Enemy(copy) {}
+SuperMutant::SuperMutant(const SuperMutant &copy) : Enemy(copy) 
+{
+	std::cout << "Gaaah. Me want smash heads!" << std::endl;
+}
 
 SuperMutant & SuperMutant::operator=(const SuperMutant & copy)
 {

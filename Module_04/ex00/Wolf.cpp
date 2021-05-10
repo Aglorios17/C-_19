@@ -6,15 +6,13 @@
 /*   By: aglorios <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/03/11 14:11:42 by aglorios          #+#    #+#             */
-/*   Updated: 2021/03/11 19:23:51 by aglorios         ###   ########.fr       */
+/*   Updated: 2021/05/10 12:26:09 by aglorios         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Wolf.hpp"
 
-Wolf::Wolf(void) {}
-
-Wolf::Wolf(std::string name)
+Wolf::Wolf(std::string name) : Victim(name)
 {
 	this->Name = name;
 	std::cout << "Rrrh I'm an aplha" << std::endl;
