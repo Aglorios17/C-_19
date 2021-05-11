@@ -64,8 +64,6 @@ int main()
 		std::cout << D << std::endl;
 	
 		ShrubberyCreationForm Test("test");
-	//	std::cout << Test << std::endl;
-	//	D.signForm(Test);
 		std::cout << Test << std::endl;
 		Test.execute(D);
 	}
@@ -78,7 +76,6 @@ int main()
 		std::cout << E << std::endl;
 	
 		RobotomyRequestForm Terminator("Terminator");
-	//	std::cout << Test << std::endl;
 		E.signForm(Terminator);
 		std::cout << Terminator << std::endl;
 		Terminator.execute(E);
@@ -92,7 +89,6 @@ int main()
 		std::cout << F << std::endl;
 	
 		PresidentialPardonForm Home("Home");
-	//	std::cout << Test << std::endl;
 		F.signForm(Home);
 		std::cout << Home << std::endl;
 		Home.execute(F);
@@ -106,7 +102,6 @@ int main()
 		std::cout << G << std::endl;
 	
 		RobotomyRequestForm IA("IA");
-	//	std::cout << Test << std::endl;
 		G.signForm(IA);
 		std::cout << IA << std::endl;
 		G.executeForm(IA);
@@ -114,12 +109,12 @@ int main()
 	catch(std::exception &e){
 		std::cerr<< e.what() << std::endl;
 	}
-	std::cout << "////////////// 8 //////////////" << std::endl;
+	std::cout << "///////// 8 MAIN TEST ////////" << std::endl;
 	try{
 		Intern E;
 		Form* rrf;
 
-		rrf = E.makeForm("robotomyrequest", "Bender");
+		rrf = E.makeForm("robotomy request", "Bender");
 	}
 	catch(std::exception &e){
 		std::cerr<< e.what() << std::endl;
@@ -129,7 +124,7 @@ int main()
 		Intern F;
 		Form* rf;
 
-		rf = F.makeForm("robotomy request", "Bender");
+		rf = F.makeForm("robotomyrequest", "Bender");
 	}
 	catch(std::exception &e){
 		std::cerr<< e.what() << std::endl;
