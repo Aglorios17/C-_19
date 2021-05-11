@@ -81,12 +81,12 @@ int	Form::getExecLevel(void) const
 
 const char *Form::GradeTooHighException::what(void) const throw()
 {
-	return ("Grade too high for this form!");
+	return ("Grade too high for create this form!");
 }
 
 const char *Form::GradeTooLowException::what(void) const throw()
 {
-	return ("Grade too low for this form !");
+	return ("Grade too low for create this form !");
 }
 
 const char *Form::CannotSign::what(void) const throw()
