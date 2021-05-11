@@ -19,11 +19,11 @@
 class Bureaucrat
 {
 	private:
-		std::string Name;
+		const std::string Name;
 		int			Grade;
 	public:
 		Bureaucrat(void);
-		Bureaucrat(std::string name, int grade);
+		Bureaucrat(const std::string name, int grade);
 		Bureaucrat(const Bureaucrat & copy);
 		Bureaucrat & operator=(const Bureaucrat & copy);
 		~Bureaucrat(void);

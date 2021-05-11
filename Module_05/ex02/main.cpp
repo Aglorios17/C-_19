@@ -63,8 +63,6 @@ int main()
 		std::cout << D << std::endl;
 	
 		ShrubberyCreationForm Test("test");
-	//	std::cout << Test << std::endl;
-	//	D.signForm(Test);
 		std::cout << Test << std::endl;
 		Test.execute(D);
 	}
