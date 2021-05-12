@@ -13,20 +13,17 @@
 #include "Form.hpp"
 #include "Bureaucrat.hpp"
 
-Form::Form(void) {}
+Form::Form(void) : AccesLevel(0), ExecLevel(0) {}
 
 Form::~Form(void) {}
 
-Form::Form(std::string form, int acces, int exec) 
+Form::Form(std::string form, int acces, int exec) : Doc(form), AccesLevel(acces), ExecLevel(exec) 
 {
-	this->Doc = form;
 	this->Validate = 0;
 	if (acces < 1 || exec < 1)
 		throw(GradeTooHighException());
 	if (acces > 150 || exec > 150)
 		throw(GradeTooLowException());
-	this->AccesLevel = acces;
-	this->ExecLevel = exec;
 }
 
 void	Form::beSigned(Bureaucrat &agent)
@@ -39,23 +36,15 @@ void	Form::beSigned(Bureaucrat &agent)
 	this->Validate = 1;
 }
 
-Form::Form(const Form & copy)
+Form::Form(const Form & copy) : Doc(copy.Doc), AccesLevel(copy.AccesLevel), ExecLevel(copy.ExecLevel)
 {
-	Doc = copy.Doc;
 	Validate = copy.Validate;
-	AccesLevel = copy.AccesLevel;
-	ExecLevel = copy.ExecLevel;
 }
 
 Form & Form::operator=(const Form & copy)
 {
 	if (this != &copy)
-	{
-		Doc = copy.Doc;
 		Validate = copy.Validate;
-		AccesLevel = copy.AccesLevel;
-		ExecLevel = copy.ExecLevel;
-	}
 	return (*this);
 }
 

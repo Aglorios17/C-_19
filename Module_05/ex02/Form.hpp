@@ -21,13 +21,13 @@ class Form;
 class Form
 {
 	private:
-		std::string Doc;
-		int			AccesLevel;
-		int			ExecLevel;
+		const std::string Doc;
+		const int			AccesLevel;
+		const int			ExecLevel;
 		bool		Validate;
 	public:
 		Form(void);
-		Form(std::string Doc, int acces, int exec);
+		Form(const std::string Doc, const int acces, const int exec);
 		Form(const Form & copy);
 		Form & operator=(const Form & copy);
 		~Form(void);
