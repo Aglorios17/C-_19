@@ -20,24 +20,24 @@ Intern::~Intern(void) {}
 
 Form *Intern::makeForm(std::string Name, std::string Target)
 {
+	Form *arrayform[] = {(new RobotomyRequestForm(Target)), (new PresidentialPardonForm(Target)), (new ShrubberyCreationForm(Target))};
 	Form *form;
 	try 
 	{
 		if (Name == "robotomy request")	
 		{
-			form = new RobotomyRequestForm(Target);
+			form = arrayform[0];
 			std::cout << "Intern creates " << form->getForm() << std::endl;
 			return (form);
 		}
 		if (Name == "presidential pardon")	
 		{
-			form = new PresidentialPardonForm(Target);
+			form = arrayform[1];
 			std::cout << "Intern creates " << form->getForm() << std::endl;
 			return (form);
 		}
 		if (Name == "shrubberry creation")	
 		{
-			form = new ShrubberyCreationForm(Target);
 			std::cout << "Intern creates " << form->getForm() << std::endl;
 			return (form);
 		}
