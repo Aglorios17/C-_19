@@ -21,7 +21,7 @@ Intern::~Intern(void) {}
 Form *Intern::makeForm(std::string Name, std::string Target)
 {
 	Form *arrayform[] = {(new RobotomyRequestForm(Target)), (new PresidentialPardonForm(Target)), (new ShrubberyCreationForm(Target))};
-	Form *form;
+	Form *form = NULL;
 	try 
 	{
 		if (Name == "robotomy request")	

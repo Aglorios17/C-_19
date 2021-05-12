@@ -51,5 +51,16 @@ void	ShrubberyCreationForm::execute(Bureaucrat const & executor) const
 	infile << "      | |        " << std::endl;
 	infile << "      |O|        " << std::endl;
 	infile << "      | |        " << std::endl;
+	infile << "|||||||||||||||||" << std::endl;
+	infile << "       /\\       " << std::endl;
+	infile << "      /  \\      " << std::endl;
+	infile << "     /*   \\     " << std::endl;
+	infile << "    /    * \\    " << std::endl;
+	infile << "   / *      \\   " << std::endl;
+	infile << "  /       *  \\  " << std::endl;
+	infile << " /       *    \\ " << std::endl;
+	infile << "      | |        " << std::endl;
+	infile << "      |O|        " << std::endl;
+	infile << "      | |        " << std::endl;
 	infile.close();
 }
