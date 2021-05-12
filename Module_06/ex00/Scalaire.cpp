@@ -78,7 +78,6 @@ void Scalaire::Scal_float(void)
 	float f;
 	try{	
 		f = stof(this->Value);
-		std::cout << "ICI : " << f << std::endl;
 		this->F = static_cast<float>(f);
 	}
 	catch(std::invalid_argument& e){

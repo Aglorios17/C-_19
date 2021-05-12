@@ -10,9 +10,9 @@
 #                                                                              #
 # **************************************************************************** #
 
-NAME     = convert
+NAME     = identify
 
-SRCS     = convert.cpp Scalaire.cpp 
+SRCS     = main.cpp A.cpp B.cpp C.cpp 
 OBJS     = $(SRCS:.cpp=.o)
 
 CC      = clang++
