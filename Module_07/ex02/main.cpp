@@ -41,8 +41,6 @@ int main()
 		Array<char> b(2);
 		b[0] = '1';
 		b[1] = '2';
-		b[2] = '3';
-	
 		try{
 			std::cout << "Size B: " << b.size() << std::endl;
 		}
@@ -62,7 +60,7 @@ int main()
     	{
     	    std::cout << "size C: " << c.size() << std::endl; ;
     	    std::cout << "size D: " << d.size() << std::endl;
-//    	    d[5] = Awesome(21);
+    	    d[3] = Awesome(21);
     	}
     	catch(const std::exception& e)
     	{
