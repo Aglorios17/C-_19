@@ -77,7 +77,7 @@ Array<T> &Array<T>::operator=(Array const &copy)
 template <typename T>
 T &Array<T>::operator[](unsigned int const &copy)
 {
-	if (copy > N)
+	if (copy >= N)
 		throw (std::exception());
 	return (array[copy]);
 }
