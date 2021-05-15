@@ -36,7 +36,7 @@ template <typename T>
 Array<T>::Array(void)
 {
 	this->N = 0;
-	this->array = NULL;
+	this->array = 0;
 }
 
 template <typename T>
@@ -51,11 +51,11 @@ Array<T>::Array(Array<T> const &copy)
 {
 	if (array)
 			delete[] array;
-		array = new T[copy.N];
-		int i = 0;
-		while (i  < copy.size())
-			array[i] = copy.array[i++];
-		N = copy.N;
+	array = new T[copy.N];
+	int i = 0;
+	while (i  < copy.size())
+		array[i] = copy.array[i++];
+	N = copy.N;
 }
 
 template <typename T>
@@ -77,7 +77,7 @@ Array<T> &Array<T>::operator=(Array const &copy)
 template <typename T>
 T &Array<T>::operator[](unsigned int const &copy)
 {
-	if (copy >= N)
+	if (copy > N)
 		throw (std::exception());
 	return (array[copy]);
 }
