@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: aglorios <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/04/29 16:32:09 by aglorios          #+#    #+#             */
-/*   Updated: 2021/04/29 16:37:39 by aglorios         ###   ########.fr       */
+/*   Created: 2021/04/23 17:02:50 by aglorios          #+#    #+#             */
+/*   Updated: 2021/04/26 18:32:46 by aglorios         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,5 +22,4 @@ int main()
 
 	std::cout << sp.shortestSpan() << std::endl;
 	std::cout << sp.longestSpan() << std::endl;
-	return (0);
 }

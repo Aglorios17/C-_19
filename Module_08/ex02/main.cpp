@@ -5,30 +5,30 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: aglorios <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/04/29 16:58:06 by aglorios          #+#    #+#             */
-/*   Updated: 2021/04/29 16:59:06 by aglorios         ###   ########.fr       */
+/*   Created: 2021/04/23 17:02:50 by aglorios          #+#    #+#             */
+/*   Updated: 2021/04/26 18:32:46 by aglorios         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int main()
 {
 	MutantStack<int> mstack;
-	
+
 	mstack.push(5);
 	mstack.push(17);
-	
+
 	std::cout << mstack.top() << std::endl;
 	
 	mstack.pop();
-	
+
 	std::cout << mstack.size() << std::endl;
-	
+
 	mstack.push(3);
 	mstack.push(5);
 	mstack.push(737);
 	//[...]
 	mstack.push(0);
-	
+
 	MutantStack<int>::iterator it = mstack.begin();
 	MutantStack<int>::iterator ite = mstack.end();
 
@@ -40,6 +40,5 @@ int main()
 		++it;
 	}
 	std::stack<int> s(mstack);
-
 	return 0;
 }
