@@ -20,14 +20,26 @@
 # include <list>
 # include <vector>
 
-class MutantStack
+template<typename T>
+class MutantStack : public std::stack<T>
 {
 	private:
 	public:
 		MutantStack(void) {}
-		MutantStack(MutantStack const & copy);
+		MutantStack(MutantStack const & copy) : std::stack<T>(copy) {}
 		MutantStack &operator=(MutantStack const & copy);
-		~MutantStack(void) {}
-}
+		virtual ~MutantStack(void) {}
+
+		typedef typename std::stack<T>::container_type::iterator iterator;
+
+		iterator begin()
+		{
+			return (this->c.begin());
+		}
+		iterator end()
+		{
+			return (this->c.end());
+		}
+};
 
 #endif

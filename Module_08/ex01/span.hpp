@@ -24,6 +24,7 @@ class Span
 {
 	private:
 		int n;
+		std::vector<int> lst;
 	public:
 		Span(void) {}
 		Span(unsigned int N) : n(N) {}
@@ -33,6 +34,6 @@ class Span
 		void addNumber(unsigned int add);
 		int shortestSpan(void);
 		int longestSpan(void);
-}
+};
 
 #endif
