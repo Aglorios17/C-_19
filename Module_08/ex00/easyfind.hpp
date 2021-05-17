@@ -21,13 +21,13 @@
 # include <vector>
 
 template<typename T>
-int &easyfind(T& t, int n)
+void easyfind(T& containers, int n)
 {
 	typename T::const_iterator it;
 
-	it = std::find(t.begin(), t.end(), n);
-	if (it != container.end())
-		std::cout << "Value find." << std::endl;
+	it = std::find(containers.begin(), containers.end(), n);
+	if (it != containers.end())
+		std::cout << "Value found." << std::endl;
 	else
 		throw std::exception();
 }
