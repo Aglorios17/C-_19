@@ -24,16 +24,19 @@ class Span
 {
 	private:
 		int n;
-		std::vector<int> lst;
+		std::vector<int> vec;
 	public:
 		Span(void) {}
 		Span(unsigned int N) : n(N) {}
 		Span(Span const & copy);
-		Span &operator=(Span const & copy);
+		Span 	&operator=(Span const & copy);
 		~Span(void) {}
-		void addNumber(unsigned int add);
-		int shortestSpan(void);
-		int longestSpan(void);
+		void	addNumber(unsigned int add);
+		int 	shortestSpan(void);
+		int 	longestSpan(void);
+		typedef	std::vector<int>::iterator IT;
+		void	addNumber(IT un, IT deux);
+		std::vector<int>& getList();
 };
 
 #endif

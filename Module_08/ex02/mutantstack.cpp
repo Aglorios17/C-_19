@@ -11,12 +11,3 @@
 /* ************************************************************************** */
 
 #include "mutantstack.hpp"
-
-MutantStack & MutantStack::operator=(MutantStack const & copy)
-{
-	if (this != &copy)
-		this->c = copy.c;
-	return (*this);
-}
-
-#endif

@@ -11,35 +11,44 @@
 /* ************************************************************************** */
 
 #ifndef MUTANTSTACK_HPP
-# define MUTANTSTACK_HPP
+#define MUTANTSTACK_HPP
 
 # include <iostream>
 # include <string>
-# include <algorithm>
+# include <iostream>
+# include <string>
 # include <stdexcept>
-# include <list>
+# include <algorithm>
 # include <vector>
+# include <iterator>
+# include <list>
+# include <stack>
 
 template<typename T>
 class MutantStack : public std::stack<T>
 {
-	private:
 	public:
-		MutantStack(void) {}
-		MutantStack(MutantStack const & copy) : std::stack<T>(copy) {}
-		MutantStack &operator=(MutantStack const & copy);
-		virtual ~MutantStack(void) {}
-
-		typedef typename std::stack<T>::container_type::iterator iterator;
-
+		MutantStack() : std::stack<T>() {};
+		MutantStack(MutantStack const& copy) : std::stack<T>(copy) {};
+		virtual ~MutantStack() {};
+		MutantStack& operator=(MutantStack const& copy)
+		{
+			if (this != &copy)
+				this->c = copy.c;
+			return *this;
+		};
+		typedef typename std::stack<T>::container_type::iterator 	iterator;
 		iterator begin()
 		{
-			return (this->c.begin());
-		}
+			return this->c.begin();
+		};
 		iterator end()
 		{
-			return (this->c.end());
-		}
+			return this->c.end();
+		};
+
+	private:
+
 };
 
 #endif
